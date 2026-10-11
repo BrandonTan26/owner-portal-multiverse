@@ -32,7 +32,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 @keyframes ti{from{transform:translateX(120%);opacity:0}to{transform:translateX(0);opacity:1}}
 @keyframes to2{to{opacity:0;transform:translateY(-20px)}}
 
-/* LANDING */
 .landing{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;position:relative;z-index:1}
 .landing-card{background:var(--bg2);border:1px solid var(--bd);border-radius:24px;padding:40px;width:100%;max-width:480px;box-shadow:0 20px 60px rgba(0,0,0,.1);text-align:center}
 [data-theme="neon"] .landing-card{box-shadow:0 20px 60px rgba(192,132,252,.15);border-color:rgba(192,132,252,.2)}
@@ -51,7 +50,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 .tb2{width:36px;height:32px;border:none;background:transparent;border-radius:8px;cursor:pointer;font-size:13px;transition:all .3s;color:var(--mt);display:flex;align-items:center;justify-content:center}
 .tb2.ac{background:var(--gr);color:#fff;box-shadow:0 4px 12px rgba(124,58,237,.3)}
 
-/* AUTH */
 .auth-form{display:none;text-align:left}
 .auth-form.ac{display:block;animation:fu .4s}
 @keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
@@ -77,7 +75,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 .tab-btn{flex:1;padding:9px;border:none;background:transparent;border-radius:9px;font-size:12px;font-weight:700;color:var(--mt);cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif}
 .tab-btn.ac{background:var(--bg2);color:var(--tx);box-shadow:0 2px 8px rgba(0,0,0,.08)}
 
-/* HEADER */
 .hdr{background:var(--bg2);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:12px}
 .hdr-l{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .hdr-logo{width:38px;height:38px;border-radius:10px;background:var(--gr);display:flex;align-items:center;justify-content:center}
@@ -94,7 +91,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 .un{font-size:11px;font-weight:700}
 .ud{font-size:8px;color:var(--mt);font-family:'JetBrains Mono',monospace}
 
-/* CLIENT CONTENT */
 .cc{flex:1;padding:24px;max-width:1300px;margin:0 auto;width:100%}
 .wb{background:var(--bg3);border-radius:22px;padding:32px;margin-bottom:24px;border:1px solid var(--bd);position:relative;overflow:hidden}
 .wb::before{content:'';position:absolute;top:-50%;right:-20%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.08),transparent 70%)}
@@ -150,7 +146,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 .es h3{font-size:15px;font-weight:800;margin-bottom:5px}
 .es p{font-size:11px;color:var(--mt);max-width:360px;margin:0 auto;line-height:1.5}
 
-/* FOOTER */
 .cf{background:var(--bg2);border-top:1px solid var(--bd);position:relative;overflow:hidden;margin-top:auto}
 .cf::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--gr)}
 [data-theme="neon"] .cf::before{background:linear-gradient(90deg,#e879f9,#c084fc,#22d3ee,#e879f9);background-size:200% 100%;animation:ns 3s linear infinite}
@@ -179,7 +174,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 .ss{position:fixed;bottom:8px;right:8px;width:16px;height:16px;cursor:pointer;opacity:.1;transition:all .3s;z-index:50;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ac);user-select:none}
 .ss:hover{opacity:.3}
 
-/* MODULE VIEWER */
 .mv{position:fixed;inset:0;background:var(--bg);z-index:1000;display:none;flex-direction:column}
 .mv.ac{display:flex}
 .mvh{background:var(--bg2);border-bottom:1px solid var(--bd);padding:11px 18px;display:flex;align-items:center;justify-content:space-between}
@@ -187,7 +181,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 .mvc{padding:7px 14px;background:var(--er);color:#fff;border:none;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif}
 .mvf{flex:1;border:none;width:100%;background:#fff}
 
-/* OWNER SIDEBAR */
 .ol{display:flex;min-height:100vh;position:relative;z-index:1}
 .sb{width:var(--sw);background:var(--bg2);border-right:1px solid var(--bd);display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;z-index:100;transition:transform .35s cubic-bezier(.4,0,.2,1);transform:translateX(-100%)}
 .sb.open{transform:translateX(0)}
@@ -295,16 +288,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 <div id="ld"><div class="ll"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="ls"></div><div class="lt">Connecting to Server...</div></div>
 <div class="tb" id="tbox"></div>
 
-<!-- SYNC INDICATOR -->
 <div class="sync-indicator" id="syncInd" style="display:none"><span class="dot"></span><span id="syncText">Connected</span></div>
 
-<!-- MODALS -->
 <div class="dm" id="detM"><div class="dmc" id="detC"></div></div>
 <div class="cm" id="cfmM"><div class="cmc"><h3>Konfirmasi Langganan</h3><p id="cfmTx">User akan diaktifkan dengan paket:</p><div class="cpl" id="cfmPl">1 Bulan</div><div class="cbs"><button class="btn bo" onclick="clCfm()" style="width:auto">Batal</button><button class="btn bp" onclick="cfApp()" style="width:auto;padding:10px 18px">✓ OK, Aktifkan</button></div></div></div>
-<div class="blk" id="blkS"><div class="bli"></div><h2 class="blt">Akses Diblokir</h2><p class="bld">Masa langganan habis atau akun dinonaktifkan. Hubungi admin untuk memperpanjang.</p><button class="btn bp" onclick="backToLanding()" style="max-width:220px">Kembali ke Home</button></div>
+<div class="blk" id="blkS"><div class="bli">🚫</div><h2 class="blt">Akses Diblokir</h2><p class="bld">Masa langganan habis atau akun dinonaktifkan. Hubungi admin untuk memperpanjang.</p><button class="btn bp" onclick="backToLanding()" style="max-width:220px">Kembali ke Home</button></div>
 <div class="blk" id="devS"><div class="bli">📱</div><h2 class="blt">Perangkat Tidak Terdaftar</h2><p class="bld">Akun ini hanya untuk 1 perangkat. Hubungi admin untuk mengganti perangkat.</p><button class="btn bp" onclick="backToLanding()" style="max-width:220px">Kembali ke Home</button></div>
 
-<!-- LANDING -->
 <div id="landingPage" class="landing">
   <div class="landing-card">
     <div class="l-logo"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
@@ -312,7 +302,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
     <p class="l-sub">One Central Hub — Realtime Cloud Server</p>
     <div class="l-modes">
       <div class="l-mode" onclick="showAuth('client')"><div class="ic">🏪</div><div class="nm">Client Portal</div><div class="ds">Masuk / Daftar Toko</div></div>
-      <div class="l-mode" onclick="showAuth('owner')"><div class="ic"></div><div class="nm">Owner Dashboard</div><div class="ds">Kelola Semua User</div></div>
+      <div class="l-mode" onclick="showAuth('owner')"><div class="ic">🛡️</div><div class="nm">Owner Dashboard</div><div class="ds">Kelola Semua User</div></div>
     </div>
     <div class="tt" style="justify-content:center">
       <button class="tb2 ac" onclick="sTh('light',this)">☀️</button>
@@ -322,7 +312,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
   </div>
 </div>
 
-<!-- AUTH -->
 <div id="authPage" style="display:none" class="landing">
   <div class="landing-card">
     <div class="l-logo"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
@@ -359,7 +348,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
   </div>
 </div>
 
-<!-- CLIENT DASHBOARD -->
 <div id="clientDash" style="display:none">
   <div style="min-height:100vh;display:flex;flex-direction:column;position:relative;z-index:1">
     <header class="hdr">
@@ -369,13 +357,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
         <div class="sbb"><div class="sd"></div>Online</div>
       </div>
       <div class="hdr-r">
-        <div class="tt"><button class="tb2" onclick="sTh('light',this)">☀️</button><button class="tb2" onclick="sTh('dark',this)">🌙</button><button class="tb2" onclick="sTh('neon',this)"></button></div>
+        <div class="tt"><button class="tb2" onclick="sTh('light',this)">☀️</button><button class="tb2" onclick="sTh('dark',this)">🌙</button><button class="tb2" onclick="sTh('neon',this)">⚡</button></div>
         <div class="uc" onclick="shDet()"><div class="ua" id="cAv">?</div><div><div class="un" id="cNm">Store</div><div class="ud" id="cCd">----</div></div></div>
         <button class="btn bd bs" onclick="backToLanding()"> Keluar</button>
       </div>
     </header>
     <div class="cc">
-      <div class="wb"><div class="wt"><span class="sd"></span>Enterprise Retail Operating System</div><h1 class="wt2">WELCOME TO <span class="hl">BRANDRETALCORTEX</span></h1><p class="wd">Smart Retail. One Powerful Platform... <strong>Manage. Monitor. Optimize.</strong></p><div class="wf"><div class="ft">⚡ High-Speed Gateway</div><div class="ft">️ Encrypted Retail Node</div><div class="ft">🔄 Realtime Data Sync</div><div class="ft">🔐 Dedicated Multi-User Auth</div></div></div>
+      <div class="wb"><div class="wt"><span class="sd"></span>Enterprise Retail Operating System</div><h1 class="wt2">WELCOME TO <span class="hl">BRANDRETALCORTEX</span></h1><p class="wd">Smart Retail. One Powerful Platform... <strong>Manage. Monitor. Optimize.</strong></p><div class="wf"><div class="ft">⚡ High-Speed Gateway</div><div class="ft">🛡️ Encrypted Retail Node</div><div class="ft">🔄 Realtime Data Sync</div><div class="ft">🔐 Dedicated Multi-User Auth</div></div></div>
       <div class="si"><div class="sif"><div class="sic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div><div><div class="scl">Identitas Toko Aktif</div><div class="snm" id="cSN">---</div><div style="margin-top:3px"><span class="scl">Kode Toko: </span><span class="scv" id="cSC">----</span></div></div></div><button class="btn bo bs" onclick="shDet()">ℹ️ Detail Akun</button></div>
       <div class="sub" id="subB"><div class="subi"><div class="subic" id="subI">♾️</div><div class="subtx" id="subTx">MEMUAT...<span>-</span></div></div><div class="subst ac" id="subSt">● Aktif</div></div>
       <div class="ew" id="expW" style="display:none"><span>⚠️</span><span id="expTx">Langganan akan segera habis!</span></div>
@@ -392,13 +380,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
         <div class="fco"><h4>📞 Support</h4><ul><li><span class="dt"></span>Admin Dashboard</li><li><span class="dt"></span>24/7 Monitoring</li><li><span class="dt"></span>Auto Sync System</li><li><span class="dt"></span>Priority Support</li></ul></div>
       </div>
       <div class="ftq"><p>⚡ Smart Retail. One Powerful Platform.</p><span>Manage. Monitor. Optimize. — All in one centralized hub.</span></div>
-      <div class="fbo"><div class="fcr">© 2026 <span>BRANDRETALCORTEX</span> — All Rights Reserved</div><div class="fbd"><div class="fbg"><span class="bd2"></span>System Online</div><div class="fbg">🔒 SSL Secured</div><div class="fbg"> v4.0</div></div></div>
+      <div class="fbo"><div class="fcr">© 2026 <span>BRANDRETALCORTEX</span> — All Rights Reserved</div><div class="fbd"><div class="fbg"><span class="bd2"></span>System Online</div><div class="fbg">🔒 SSL Secured</div><div class="fbg">⚡ v4.0</div></div></div>
     </div></footer>
     <div class="ss" id="secS" onclick="hSt()">✦</div>
   </div>
 </div>
 
-<!-- OWNER DASHBOARD -->
 <div id="ownerDash" style="display:none">
   <div class="ol">
     <aside class="sb" id="sb">
@@ -413,7 +400,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
         <div class="nv-l">Main Menu</div>
         <div class="nv-i ac" onclick="swS('overview',this)"><span class="nv-ic">📊</span><span>Overview</span></div>
         <div class="nv-i" onclick="swS('active',this)"><span class="nv-ic">👥</span><span>User Aktif</span></div>
-        <div class="nv-i" onclick="swS('expiring',this)"><span class="nv-ic"></span><span>Mau Habis</span><span class="nv-bd" id="exBd">0</span></div>
+        <div class="nv-i" onclick="swS('expiring',this)"><span class="nv-ic">⏳</span><span>Mau Habis</span><span class="nv-bd" id="exBd">0</span></div>
         <div class="nv-i" onclick="swS('pending',this)"><span class="nv-ic">📋</span><span>ACC Pendaftaran</span><span class="nv-bd" id="peBd">0</span></div>
         <div class="nv-i" onclick="swS('devices',this)"><span class="nv-ic">📱</span><span>Data Pengguna</span></div>
         <div class="nv-l">System</div>
@@ -445,7 +432,31 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
           </div>
           <div class="dc"><div class="dh"><div class="dt">Database User Sewa<span>Kelola masa aktif dan status user</span></div><div class="ds"><input type="text" placeholder="Cari Kode Toko..." id="oSrch" oninput="fltTbl()"><select id="oFlt" onchange="fltTbl()"><option value="all">All Status</option><option value="active">Active</option><option value="expiring">Expiring</option><option value="expired">Expired</option><option value="pending">Pending</option></select></div></div><div class="dw"><table class="dtb"><thead><tr><th>Kode</th><th>Nama</th><th>PIN</th><th>Berlaku</th><th>Sisa</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="oTb"></tbody></table></div></div>
         </div>
-        <div class="os" id="s-active"><div class="dc"><div class="dh"><div class="dt">User Aktif<span>Daftar user dengan langganan aktif</span></div></div><div class="dw"><table class="dtb"><thead><tr><th>Kode</th><th>Nama</th><th>WhatsApp</th><th>Berlaku</th><th>Sisa</th><th>Device</th><th>Aksi</th></tr></thead><tbody id="aTb"></tbody></table></div></div></div>
+        
+        <!-- USER AKTIF: DITAMBAHKAN KOLOM KODE & PIN -->
+        <div class="os" id="s-active">
+          <div class="dc">
+            <div class="dh"><div class="dt">User Aktif<span>Daftar user aktif beserta kredensial login</span></div></div>
+            <div class="dw">
+              <table class="dtb">
+                <thead>
+                  <tr>
+                    <th>Kode Toko</th>
+                    <th>Nama</th>
+                    <th>PIN</th>
+                    <th>WhatsApp</th>
+                    <th>Berlaku</th>
+                    <th>Sisa</th>
+                    <th>Device</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="aTb"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
         <div class="os" id="s-expiring"><div class="dc"><div class="dh"><div class="dt">User Mau Habis<span>Langganan ≤30 hari</span></div></div><div class="dw"><table class="dtb"><thead><tr><th>Kode</th><th>Nama</th><th>WhatsApp</th><th>Berlaku</th><th>Sisa</th><th>Aksi</th></tr></thead><tbody id="eTb"></tbody></table></div></div></div>
         <div class="os" id="s-pending"><div class="dc"><div class="dh"><div class="dt">ACC Pendaftaran Baru<span>Request dari client baru</span></div></div><div class="dw"><table class="dtb"><thead><tr><th>Kode</th><th>Nama</th><th>WhatsApp</th><th>Paket</th><th>Tgl Daftar</th><th>Aksi</th></tr></thead><tbody id="pTb"></tbody></table></div></div></div>
         <div class="os" id="s-devices"><div class="dc"><div class="dh"><div class="dt">Data Pengguna & Device<span>Informasi lokasi dan perangkat</span></div></div><div class="dw"><table class="dtb"><thead><tr><th>Kode</th><th>Nama</th><th>Lokasi</th><th>Device</th><th>Browser</th><th>Aksi</th></tr></thead><tbody id="dTb"></tbody></table></div></div></div>
@@ -457,7 +468,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 
 <div class="mv" id="modV"><div class="mvh"><div class="mvt"><span id="mvNm">Module</span></div><button class="mvc" onclick="clMod()">✕ Tutup Modul</button></div><iframe class="mvf" id="mvFr" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe></div>
 
-<!-- FIREBASE SDK -->
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 
@@ -473,7 +483,6 @@ const firebaseConfig = {
   appId: "YOUR_APP_ID"
 };
 
-// Initialize Firebase
 let db = null;
 let useFirebase = false;
 try {
@@ -490,34 +499,23 @@ try {
 const OWNER_PIN='admin123';
 let currentMode=null,currentClient=null;
 
-// ===== DATA LAYER (Firebase or localStorage) =====
 function gU(){
-  if(useFirebase){
-    // Sync from Firebase - cached locally
-    return JSON.parse(localStorage.getItem('fb_users')||'[]');
-  }
+  if(useFirebase) return JSON.parse(localStorage.getItem('fb_users')||'[]');
   return JSON.parse(localStorage.getItem('brc_users')||'[]');
 }
 function sU(u){
-  if(useFirebase){
-    db.ref('users').set(u);
-  }
+  if(useFirebase) db.ref('users').set(u);
   localStorage.setItem('brc_users',JSON.stringify(u));
 }
 function gM(){
-  if(useFirebase){
-    return JSON.parse(localStorage.getItem('fb_modules')||'[]');
-  }
+  if(useFirebase) return JSON.parse(localStorage.getItem('fb_modules')||'[]');
   return JSON.parse(localStorage.getItem('brc_modules')||'[]');
 }
 function sM(m){
-  if(useFirebase){
-    db.ref('modules').set(m);
-  }
+  if(useFirebase) db.ref('modules').set(m);
   localStorage.setItem('brc_modules',JSON.stringify(m));
 }
 
-// Firebase Realtime Listeners
 if(useFirebase){
   db.ref('users').on('value',function(snap){
     const data=snap.val()||[];
@@ -569,7 +567,6 @@ function backToLanding(){localStorage.removeItem('brc_client_session');localStor
 
 function swTab(t){const lf=document.getElementById('loginForm'),rf=document.getElementById('regForm'),tl=document.getElementById('tabLogin'),tr=document.getElementById('tabReg');if(t==='login'){lf.style.display='block';rf.style.display='none';tl.classList.add('ac');tr.classList.remove('ac')}else{lf.style.display='none';rf.style.display='block';tr.classList.add('ac');tl.classList.remove('ac')}}
 
-// CLIENT
 function doLg(){const c=document.getElementById('lgC').value.trim().toUpperCase(),p=document.getElementById('lgP').value.trim();if(!c||!p){showErr('lgErr','Masukkan kode toko dan PIN!');return}const u=gU().find(function(x){return x.code.toUpperCase()===c});if(!u){showErr('lgErr','Kode toko tidak ditemukan!');return}if(u.pin!==p){showErr('lgErr','PIN salah!');return}if(u.status==='disabled'){showErr('lgErr','Akun dinonaktifkan. Hubungi admin.');return}if(u.status==='pending'){showErr('lgErr','Akun belum disetujui admin. Tunggu ACC dari Owner.');return}if(u.plan!=='permanent'&&u.endDate&&new Date()>new Date(u.endDate)){document.getElementById('blkS').classList.add('ac');return}if(u.device&&u.device!==navigator.userAgent.substring(0,80)&&u.locationConfirmed){document.getElementById('devS').classList.add('ac');return}localStorage.setItem('brc_client_session',u.code);currentClient=u;currentMode='client';showClientDash(u)}
 
 function doRg(){const c=document.getElementById('rgC').value.trim().toUpperCase(),n=document.getElementById('rgN').value.trim(),w=document.getElementById('rgW').value.trim(),p=document.getElementById('rgP').value,pi=document.getElementById('rgPi').value.trim();if(!c||!n||!w||!pi){showErr('rgErr','Lengkapi semua field!');return}if(pi.length<4){showErr('rgErr','PIN minimal 4 digit!');return}const us=gU();if(us.find(function(x){return x.code.toUpperCase()===c})){showErr('rgErr','Kode toko sudah terdaftar!');return}const nu={code:c,name:n,whatsapp:w,pin:pi,plan:p,status:'pending',startDate:new Date().toISOString().split('T')[0],endDate:null,device:navigator.userAgent.substring(0,80),deviceType:gDT(),browser:gBR(),os:gOS(),screen:window.screen.width+'x'+window.screen.height,location:null,locationConfirmed:false,registeredAt:new Date().toISOString().split('T')[0]};
@@ -583,7 +580,7 @@ function updS(u){const ic=document.getElementById('subI'),tx=document.getElement
 function gRD(u){if(u.plan==='permanent'||!u.endDate)return 9999;return Math.ceil((new Date(u.endDate)-new Date())/(1000*60*60*24))}
 function chkE(u){const w=document.getElementById('expW');if(u.plan!=='permanent'){const d=gRD(u);if(d<=30&&d>0){w.style.display='flex';document.getElementById('expTx').textContent='⚠️ Langganan tersisa '+d+' hari! Segera perpanjang.'}else if(d<=0){document.getElementById('blkS').classList.add('ac')}else w.style.display='none'}else w.style.display='none'}
 
-function rMod(){const ms=gM(),g=document.getElementById('modG');document.getElementById('modC').textContent=ms.length;if(ms.length===0){g.innerHTML='<div class="es" style="grid-column:1/-1"><div class="esi"></div><h3>Belum Ada Modul</h3><p>Owner belum menambahkan modul. Modul akan muncul di sini secara realtime.</p></div>';return}let html='';ms.forEach(function(m){html+='<div class="mc"><div class="mch"><div class="mib">'+(m.icon||'')+'</div><div class="mst"><div class="sd"></div>Online</div></div><h3 class="mnm">'+m.name+'</h3><p class="mds">'+(m.desc||'Modul operasional retail')+'</p>';if(m.credentials){html+='<div class="mcr"><div class="mct">🔐 Kredensial Modul <span style="margin-left:auto;font-size:8px">Terkunci</span></div><div class="crg"><div class="cri"><div class="crl">User ID:</div><div class="crv">'+m.credentials.userId+' <button class="cpb" onclick="cpT(\''+m.credentials.userId+'\')">📋</button></div></div><div class="cri"><div class="crl">PIN:</div><div class="crv">'+m.credentials.pin+' <button class="cpb" onclick="cpT(\''+m.credentials.pin+'\')">📋</button></div></div></div></div>'}html+='<button class="mbt" onclick="opM(\''+m.id+'\',\''+m.name+'\',\''+m.url+'\')">⚡ Buka Ruang Kerja Modul</button></div>'});g.innerHTML=html}
+function rMod(){const ms=gM(),g=document.getElementById('modG');document.getElementById('modC').textContent=ms.length;if(ms.length===0){g.innerHTML='<div class="es" style="grid-column:1/-1"><div class="esi">📦</div><h3>Belum Ada Modul</h3><p>Owner belum menambahkan modul. Modul akan muncul di sini secara realtime.</p></div>';return}let html='';ms.forEach(function(m){html+='<div class="mc"><div class="mch"><div class="mib">'+(m.icon||'📦')+'</div><div class="mst"><div class="sd"></div>Online</div></div><h3 class="mnm">'+m.name+'</h3><p class="mds">'+(m.desc||'Modul operasional retail')+'</p>';if(m.credentials){html+='<div class="mcr"><div class="mct">🔐 Kredensial Modul <span style="margin-left:auto;font-size:8px">Terkunci</span></div><div class="crg"><div class="cri"><div class="crl">User ID:</div><div class="crv">'+m.credentials.userId+' <button class="cpb" onclick="cpT(\''+m.credentials.userId+'\')">📋</button></div></div><div class="cri"><div class="crl">PIN:</div><div class="crv">'+m.credentials.pin+' <button class="cpb" onclick="cpT(\''+m.credentials.pin+'\')">📋</button></div></div></div></div>'}html+='<button class="mbt" onclick="opM(\''+m.id+'\',\''+m.name+'\',\''+m.url+'\')">⚡ Buka Ruang Kerja Modul</button></div>'});g.innerHTML=html}
 function opM(id,nm,ur){document.getElementById('mvNm').textContent='⚡ '+nm;document.getElementById('mvFr').src=ur;document.getElementById('modV').classList.add('ac')}
 function clMod(){document.getElementById('modV').classList.remove('ac');document.getElementById('mvFr').src=''}
 function cpT(t){navigator.clipboard.writeText(t).then(function(){toast('Disalin!','ok')})}
@@ -594,14 +591,12 @@ function clDet(){document.getElementById('detM').classList.remove('ac')}
 let sCC=0,sCT=null;
 function hSt(){sCC++;clearTimeout(sCT);if(sCC>=2){sCC=0;currentMode='owner';showAuth('owner')}else sCT=setTimeout(function(){sCC=0},1000)}
 
-// OWNER
 function doOwLogin(){const pin=document.getElementById('owPin').value.trim();if(!pin){document.getElementById('owErr').textContent='Masukkan PIN!';document.getElementById('owErr').style.display='block';return}if(pin===OWNER_PIN){localStorage.setItem('brc_owner_session','active');currentMode='owner';showOwnerDash();toast('Welcome, Owner!','ok')}else{document.getElementById('owErr').textContent='PIN salah!';document.getElementById('owErr').style.display='block';document.getElementById('owPin').value='';document.getElementById('owPin').focus();setTimeout(function(){document.getElementById('owErr').style.display='none'},2000)}}
 
 function showOwnerDash(){hideAll();document.getElementById('ownerDash').style.display='flex';currentMode='owner';updAll()}
 
 function doLogout(){if(!confirm('Yakin ingin logout?'))return;localStorage.removeItem('brc_owner_session');currentMode=null;document.getElementById('sb').classList.remove('open');document.getElementById('mhTog').classList.remove('active');backToLanding();toast('Logged out','in')}
 
-// SIDEBAR TOGGLE DENGAN TOMBOL X
 function tgSb(){
   const sb=document.getElementById('sb');
   const btn=document.getElementById('mhTog');
@@ -627,15 +622,32 @@ function gUS(u){if(u.status==='pending')return'pending';if(u.plan==='permanent')
 
 function delUser(c){if(!confirm('⚠️ HAPUS PERMANEN user "'+c+'"?\n\nData akan dihapus dari server.'))return;const u=gU(),idx=u.findIndex(function(x){return x.code===c});if(idx!==-1){u.splice(idx,1);sU(u);toast('User '+c+' dihapus dari server!','er');updAll()}}
 
-function rOT(){const u=gU(),sr=document.getElementById('oSrch').value.toLowerCase(),fl=document.getElementById('oFlt').value;const f=u.filter(function(x){const ms=x.code.toLowerCase().includes(sr)||x.name.toLowerCase().includes(sr);const mf=fl==='all'||gUS(x)===fl;return ms&&mf});document.getElementById('oTb').innerHTML=f.length?f.map(function(x){const st=gUS(x),dy=x.plan==='permanent'?'∞':gRD(x)+' Hari',ed=x.plan==='permanent'?'Permanent':(x.endDate||'-');return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td style="font-family:JetBrains Mono;font-size:11px">'+x.pin+'</td><td>'+ed+'</td><td style="font-weight:700">'+dy+'</td><td><span class="sp2 '+st+'">'+st.charAt(0).toUpperCase()+st.slice(1)+'</span></td><td><div class="ab">'+(st!=='expired'?'<button class="ab2 ext" onclick="extU(\''+x.code+'\')">📅 Extend</button>':'')+'<button class="ab2 del" onclick="delUser(\''+x.code+'\')">️ Off</button><button class="ab2 det" onclick="shDet2(\''+x.code+'\')">👁️</button></div></td></tr>'}).join(''):'<tr><td colspan="7"><div class="es"><div class="esi">📭</div><h3>Belum ada user terdaftar</h3><p>Client yang daftar akan muncul di sini.</p></div></td></tr>'}
+function rOT(){const u=gU(),sr=document.getElementById('oSrch').value.toLowerCase(),fl=document.getElementById('oFlt').value;const f=u.filter(function(x){const ms=x.code.toLowerCase().includes(sr)||x.name.toLowerCase().includes(sr);const mf=fl==='all'||gUS(x)===fl;return ms&&mf});document.getElementById('oTb').innerHTML=f.length?f.map(function(x){const st=gUS(x),dy=x.plan==='permanent'?'∞':gRD(x)+' Hari',ed=x.plan==='permanent'?'Permanent':(x.endDate||'-');return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td style="font-family:JetBrains Mono;font-size:11px">'+x.pin+'</td><td>'+ed+'</td><td style="font-weight:700">'+dy+'</td><td><span class="sp2 '+st+'">'+st.charAt(0).toUpperCase()+st.slice(1)+'</span></td><td><div class="ab">'+(st!=='expired'?'<button class="ab2 ext" onclick="extU(\''+x.code+'\')">📅 Extend</button>':'')+'<button class="ab2 del" onclick="delUser(\''+x.code+'\')">🗑️ Off</button><button class="ab2 det" onclick="shDet2(\''+x.code+'\')">👁️</button></div></td></tr>'}).join(''):'<tr><td colspan="7"><div class="es"><div class="esi">📭</div><h3>Belum ada user terdaftar</h3><p>Client yang daftar akan muncul di sini.</p></div></td></tr>'}
 function fltTbl(){rOT()}
 
-function rAT(){const u=gU().filter(function(x){return x.status==='active'});document.getElementById('aTb').innerHTML=u.length?u.map(function(x){const d=x.plan==='permanent'?'':gRD(x)+' Hari';return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td>'+x.whatsapp+'</td><td>'+(x.plan==='permanent'?'Permanent':x.endDate)+'</td><td style="font-weight:700">'+d+'</td><td style="font-size:10px;color:var(--mt)">'+(x.deviceType||'-')+'</td><td><div class="ab"><button class="ab2 ext" onclick="extU(\''+x.code+'\')">📅 Extend</button><button class="ab2 del" onclick="delUser(\''+x.code+'\')">🗑️ Off</button></div></td></tr>'}).join(''):'<tr><td colspan="7"><div class="es"><div class="esi"></div><h3>Tidak ada user aktif</h3></div></td></tr>'}
+// ===== FUNGSI RENDER USER AKTIF (DITAMBAHKAN KOLOM KODE & PIN) =====
+function rAT(){
+  const u=gU().filter(function(x){return x.status==='active'});
+  document.getElementById('aTb').innerHTML=u.length?u.map(function(x){
+    const d=x.plan==='permanent'?'∞':gRD(x)+' Hari';
+    return '<tr>'+
+      '<td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td>'+
+      '<td>'+x.name+'</td>'+
+      '<td style="font-family:JetBrains Mono;font-size:11px;color:var(--ac);font-weight:700">'+x.pin+'</td>'+
+      '<td>'+x.whatsapp+'</td>'+
+      '<td>'+(x.plan==='permanent'?'Permanent':x.endDate)+'</td>'+
+      '<td style="font-weight:700">'+d+'</td>'+
+      '<td style="font-size:10px;color:var(--mt)">'+(x.deviceType||'-')+'</td>'+
+      '<td><div class="ab"><button class="ab2 ext" onclick="extU(\''+x.code+'\')">📅 Extend</button><button class="ab2 del" onclick="delUser(\''+x.code+'\')">🗑️ Off</button></div></td>'+
+    '</tr>'
+  }).join(''):'<tr><td colspan="8"><div class="es"><div class="esi">👥</div><h3>Tidak ada user aktif</h3></div></td></tr>';
+}
+
 function rET(){const u=gU().filter(function(x){return x.status==='active'&&x.plan!=='permanent'&&gRD(x)<=30&&gRD(x)>0});document.getElementById('eTb').innerHTML=u.length?u.map(function(x){const d=gRD(x);return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td>'+x.whatsapp+'</td><td>'+x.endDate+'</td><td style="font-weight:700;color:var(--wn)">'+d+' Hari</td><td><div class="ab"><button class="ab2 ext" onclick="extU(\''+x.code+'\')">📅 Perpanjang</button><button class="ab2 del" onclick="delUser(\''+x.code+'\')">🗑️ Off</button></div></td></tr>'}).join(''):'<tr><td colspan="6"><div class="es"><div class="esi">⏳</div><h3>Tidak ada user mau habis</h3></div></td></tr>'}
 function rPT(){const u=gU().filter(function(x){return x.status==='pending'});document.getElementById('pTb').innerHTML=u.length?u.map(function(x){const pl=x.plan==='permanent'?'Permanent':x.plan+' Bulan';return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td>'+x.whatsapp+'</td><td><span class="sp2 pe">'+pl+'</span></td><td>'+x.registeredAt+'</td><td><div class="ab"><button class="ab2 app" onclick="appU(\''+x.code+'\')">✓ ACC</button><button class="ab2 rej" onclick="rejU(\''+x.code+'\')">✕ Tolak</button></div></td></tr>'}).join(''):'<tr><td colspan="6"><div class="es"><div class="esi">📋</div><h3>Tidak ada pendaftaran pending</h3></div></td></tr>'}
 function rDT(){const u=gU().filter(function(x){return x.status!=='pending'});document.getElementById('dTb').innerHTML=u.length?u.map(function(x){const lc=x.location?x.location.lat.toFixed(4)+', '+x.location.lng.toFixed(4):'Belum';return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td><span class="sp2 '+(x.locationConfirmed?'ac':'ed')+'">'+(x.locationConfirmed?'✅ '+lc:'❌ Belum')+'</span></td><td style="font-size:10px;color:var(--mt)">'+(x.deviceType||'-')+'</td><td style="font-size:10px;color:var(--mt)">'+(x.browser||'-')+'</td><td><div class="ab"><button class="ab2 det" onclick="shDet2(\''+x.code+'\')">👁️ Detail</button><button class="ab2 del" onclick="delUser(\''+x.code+'\')">🗑️ Off</button></div></td></tr>'}).join(''):'<tr><td colspan="6"><div class="es"><div class="esi">📱</div><h3>Belum ada data pengguna</h3></div></td></tr>'}
 
-function shDet2(c){const u=gU().find(function(x){return x.code===c});if(!u)return;const d=u.plan==='permanent'?'∞':gRD(u)+' Hari';let h='<div style="text-align:center;margin-bottom:12px"><div style="width:48px;height:48px;border-radius:12px;background:var(--gr);display:inline-flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:6px"></div><h3 style="font-size:16px;font-weight:800">'+u.name+'</h3><p style="font-size:9px;color:var(--mt);font-family:JetBrains Mono">KODE: '+u.code+'</p></div>';h+='<div class="dtr"><span class="dtl">WhatsApp</span><span class="dtv">'+u.whatsapp+'</span></div>';h+='<div class="dtr"><span class="dtl">PIN</span><span class="dtv">'+u.pin+'</span></div>';h+='<div class="dtr"><span class="dtl">Paket</span><span class="dtv">'+(u.plan==='permanent'?'Permanent':u.plan+' Bulan')+'</span></div>';h+='<div class="dtr"><span class="dtl">Status</span><span class="dtv">'+u.status+'</span></div>';h+='<div class="dtr"><span class="dtl">Sisa Waktu</span><span class="dtv">'+d+'</span></div>';h+='<div class="dtr"><span class="dtl">Mulai</span><span class="dtv">'+u.startDate+'</span></div>';h+='<div class="dtr"><span class="dtl">Berakhir</span><span class="dtv">'+(u.endDate||'Permanent')+'</span></div>';h+='<div class="dtr"><span class="dtl">Device</span><span class="dtv">'+(u.deviceType||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">Browser</span><span class="dtv">'+(u.browser||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">OS</span><span class="dtv">'+(u.os||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">Layar</span><span class="dtv">'+(u.screen||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">Lokasi</span><span class="dtv">'+(u.location?u.location.address:'Belum')+'</span></div>';h+='<div class="dtr"><span class="dtl">Terdaftar</span><span class="dtv">'+u.registeredAt+'</span></div>';h+='<div style="display:flex;gap:6px;margin-top:12px"><button class="btn bp bs" onclick="extU(\''+u.code+'\');clDet()" style="flex:1">📅 Extend</button><button class="btn bd bs" onclick="delUser(\''+u.code+'\');clDet()" style="flex:1">️ Hapus</button></div>';h+='<button class="btn bo" onclick="clDet()" style="width:100%;margin-top:6px">Tutup</button>';document.getElementById('detC').innerHTML=h;document.getElementById('detM').classList.add('ac')}
+function shDet2(c){const u=gU().find(function(x){return x.code===c});if(!u)return;const d=u.plan==='permanent'?'∞':gRD(u)+' Hari';let h='<div style="text-align:center;margin-bottom:12px"><div style="width:48px;height:48px;border-radius:12px;background:var(--gr);display:inline-flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:6px">🏪</div><h3 style="font-size:16px;font-weight:800">'+u.name+'</h3><p style="font-size:9px;color:var(--mt);font-family:JetBrains Mono">KODE: '+u.code+'</p></div>';h+='<div class="dtr"><span class="dtl">WhatsApp</span><span class="dtv">'+u.whatsapp+'</span></div>';h+='<div class="dtr"><span class="dtl">PIN</span><span class="dtv" style="color:var(--ac)">'+u.pin+'</span></div>';h+='<div class="dtr"><span class="dtl">Paket</span><span class="dtv">'+(u.plan==='permanent'?'Permanent':u.plan+' Bulan')+'</span></div>';h+='<div class="dtr"><span class="dtl">Status</span><span class="dtv">'+u.status+'</span></div>';h+='<div class="dtr"><span class="dtl">Sisa Waktu</span><span class="dtv">'+d+'</span></div>';h+='<div class="dtr"><span class="dtl">Mulai</span><span class="dtv">'+u.startDate+'</span></div>';h+='<div class="dtr"><span class="dtl">Berakhir</span><span class="dtv">'+(u.endDate||'Permanent')+'</span></div>';h+='<div class="dtr"><span class="dtl">Device</span><span class="dtv">'+(u.deviceType||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">Browser</span><span class="dtv">'+(u.browser||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">OS</span><span class="dtv">'+(u.os||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">Layar</span><span class="dtv">'+(u.screen||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">Lokasi</span><span class="dtv">'+(u.location?u.location.address:'Belum')+'</span></div>';h+='<div class="dtr"><span class="dtl">Terdaftar</span><span class="dtv">'+u.registeredAt+'</span></div>';h+='<div style="display:flex;gap:6px;margin-top:12px"><button class="btn bp bs" onclick="extU(\''+u.code+'\');clDet()" style="flex:1">📅 Extend</button><button class="btn bd bs" onclick="delUser(\''+u.code+'\');clDet()" style="flex:1">🗑️ Hapus</button></div>';h+='<button class="btn bo" onclick="clDet()" style="width:100%;margin-top:6px">Tutup</button>';document.getElementById('detC').innerHTML=h;document.getElementById('detM').classList.add('ac')}
 
 let paC=null;
 function appU(c){const u=gU().find(function(x){return x.code===c});if(!u)return;paC=c;const pl=u.plan==='permanent'?'Permanent':u.plan+' Bulan';document.getElementById('cfmTx').textContent='User "'+u.name+'" ('+c+') akan diaktifkan:';document.getElementById('cfmPl').textContent=pl;document.getElementById('cfmM').classList.add('ac')}
