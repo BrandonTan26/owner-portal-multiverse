@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrandRetalCortex - Owner Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f4f1ff;--bg2:#fff;--bg3:#ede9fe;--tx:#1e1b4b;--tx2:#64748b;--mt:#94a3b8;--ac:#7c3aed;--ac2:#a78bfa;--ok:#10b981;--er:#ef4444;--wn:#f59e0b;--bd:#e5e7eb;--gr:linear-gradient(135deg,#7c3aed,#a78bfa,#60a5fa);--gb:linear-gradient(135deg,#7c3aed,#a78bfa);--sw:260px}
+[data-theme="dark"]{--bg:#0f0b1e;--bg2:#1a1530;--bg3:#241e3f;--tx:#f1f5f9;--tx2:#cbd5e1;--mt:#64748b;--ac:#8b5cf6;--ac2:#a78bfa;--bd:#2d2545;--gr:linear-gradient(135deg,#8b5cf6,#a78bfa,#60a5fa);--gb:linear-gradient(135deg,#8b5cf6,#a78bfa)}
+[data-theme="neon"]{--bg:#05020f;--bg2:#0a0618;--bg3:#110d24;--tx:#f5f3ff;--tx2:#c4b5fd;--mt:#7c6fa0;--ac:#c084fc;--ac2:#e879f9;--bd:rgba(192,132,252,.15);--gr:linear-gradient(135deg,#c084fc,#e879f9,#22d3ee);--gb:linear-gradient(90deg,#e879f9,#c084fc,#22d3ee)}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;overflow-x:hidden;transition:background .4s,color .4s}
+.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.15;animation:of 20s infinite}
+.o1{width:500px;height:500px;background:#7c3aed;top:-150px;left:-150px}
+.o2{width:400px;height:400px;background:#60a5fa;bottom:-150px;right:-150px;animation-delay:-7s}
+.o3{width:350px;height:350px;background:#a78bfa;top:40%;left:40%;animation-delay:-14s}
+@keyframes of{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-30px)}}
+[data-theme="light"] .orbs{display:none}
+#ld{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:99999;transition:opacity .6s}
+#ld.h{opacity:0;pointer-events:none}
+.ll{width:80px;height:80px;border-radius:20px;background:var(--gr);display:flex;align-items:center;justify-content:center;margin-bottom:20px;animation:lp 2s infinite;box-shadow:0 0 40px rgba(124,58,237,.3)}
+@keyframes lp{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.ll svg{width:40px;height:40px;fill:#fff}
+.ls{width:44px;height:44px;border:3px solid var(--bd);border-top-color:var(--ac);border-radius:50%;animation:sp .8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.lt{margin-top:18px;font-size:12px;color:var(--mt);font-weight:600;letter-spacing:3px;text-transform:uppercase;font-family:'JetBrains Mono',monospace}
+.tb{position:fixed;top:20px;right:20px;z-index:10000;display:flex;flex-direction:column;gap:10px}
+.ts{padding:13px 18px;border-radius:12px;font-size:13px;font-weight:600;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.15);animation:ti .4s,to2 .4s 3.5s forwards;max-width:340px;display:flex;align-items:center;gap:8px}
+.ts.ok{background:linear-gradient(135deg,#10b981,#34d399)}
+.ts.er{background:linear-gradient(135deg,#ef4444,#f87171)}
+.ts.wn{background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#000}
+.ts.in{background:var(--gr)}
+@keyframes ti{from{transform:translateX(120%);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes to2{to{opacity:0;transform:translateY(-20px)}}
+
+/* LOGIN */
+.login-page{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9998;padding:20px}
+.login-page.hidden{display:none}
+.login-card{background:var(--bg2);border:1px solid var(--bd);border-radius:24px;padding:40px;width:100%;max-width:420px;box-shadow:0 20px 60px rgba(0,0,0,.1);text-align:center}
+[data-theme="neon"] .login-card{box-shadow:0 20px 60px rgba(192,132,252,.15);border-color:rgba(192,132,252,.2)}
+.login-logo{width:72px;height:72px;border-radius:18px;background:var(--gr);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 24px rgba(124,58,237,.3)}
+.login-logo svg{width:36px;height:36px;fill:#fff}
+.login-title{font-size:20px;font-weight:800;margin-bottom:4px;font-family:'JetBrains Mono',monospace}
+[data-theme="neon"] .login-title{background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.login-sub{font-size:12px;color:var(--mt);margin-bottom:28px}
+.login-form{text-align:left}
+.login-form .fg{margin-bottom:18px}
+.login-form .fl{display:block;font-size:10px;font-weight:700;color:var(--mt);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:7px;font-family:'JetBrains Mono',monospace}
+.login-form .fi{width:100%;padding:14px 16px;border:1.5px solid var(--bd);border-radius:11px;font-size:15px;font-family:'Inter',sans-serif;background:var(--bg3);color:var(--tx);transition:all .3s;outline:none}
+.login-form .fi:focus{border-color:var(--ac);box-shadow:0 0 0 3px rgba(124,58,237,.1)}
+[data-theme="neon"] .login-form .fi:focus{border-color:#c084fc;box-shadow:0 0 0 3px rgba(192,132,252,.15)}
+.login-err{color:var(--er);font-size:12px;font-weight:600;margin-bottom:12px;display:none;text-align:center}
+.login-btn{width:100%;padding:14px;background:var(--gb);color:#fff;border:none;border-radius:11px;font-size:15px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;transition:all .3s;box-shadow:0 6px 20px rgba(124,58,237,.25)}
+[data-theme="neon"] .login-btn{background:linear-gradient(90deg,#e879f9,#c084fc,#22d3ee);color:#0a0618;font-weight:800;box-shadow:0 8px 32px rgba(232,121,249,.3)}
+.login-btn:hover{transform:translateY(-2px)}
+
+/* ===== SIDEBAR - DEFAULT TERTUTUP ===== */
+.sb{width:var(--sw);background:var(--bg2);border-right:1px solid var(--bd);display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;z-index:100;transition:transform .35s cubic-bezier(.4,0,.2,1);transform:translateX(-100%)}
+.sb.open{transform:translateX(0)}
+.sb-h{padding:18px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--bd)}
+.sb-l{width:40px;height:40px;border-radius:11px;background:var(--gr);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sb-l svg{width:20px;height:20px;fill:#fff}
+.sb-b h3{font-size:14px;font-weight:800;font-family:'JetBrains Mono',monospace}
+.sb-b h3 span{color:var(--ac)}
+.sb-b p{font-size:9px;color:var(--mt);margin-top:1px}
+.sb-n{flex:1;padding:14px 10px;overflow-y:auto}
+.nv-l{font-size:9px;font-weight:700;color:var(--mt);text-transform:uppercase;letter-spacing:1.5px;padding:10px 14px 6px}
+.nv-i{display:flex;align-items:center;gap:11px;padding:11px 14px;border-radius:10px;cursor:pointer;transition:all .3s;margin-bottom:3px;color:var(--tx2);font-size:13px;font-weight:500}
+.nv-i:hover{background:var(--bg3);color:var(--tx)}
+.nv-i.ac{background:rgba(124,58,237,.1);color:var(--ac);font-weight:600}
+[data-theme="neon"] .nv-i.ac{background:rgba(192,132,252,.1);color:#e879f9}
+.nv-ic{font-size:16px;width:22px;text-align:center;flex-shrink:0}
+.nv-bd{margin-left:auto;background:var(--er);color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:9px;min-width:20px;text-align:center}
+.sb-f{padding:14px;border-top:1px solid var(--bd)}
+.sb-fb{width:100%;padding:10px;background:var(--bg3);border:1px solid var(--bd);border-radius:9px;cursor:pointer;font-size:12px;font-weight:600;color:var(--tx2);display:flex;align-items:center;justify-content:center;gap:6px;transition:all .3s;font-family:'Inter',sans-serif}
+.sb-fb:hover{background:var(--bg);color:var(--tx)}
+.sb-fb.lo{color:var(--er);border-color:rgba(239,68,68,.2)}
+.sb-fb.lo:hover{background:var(--er);color:#fff}
+
+/* ===== MAIN ===== */
+.mn{flex:1;min-height:100vh;transition:margin-left .35s cubic-bezier(.4,0,.2,1)}
+.mh{background:var(--bg2);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd);padding:14px 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;flex-wrap:wrap;gap:12px}
+.mh-l{display:flex;align-items:center;gap:12px}
+.mh-tog{width:40px;height:40px;border-radius:10px;background:var(--bg3);border:1px solid var(--bd);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .3s;color:var(--tx);font-family:'Inter',sans-serif}
+.mh-tog:hover{background:var(--ac);color:#fff;border-color:var(--ac);transform:scale(1.05)}
+.mh-tog.active{background:var(--ac);color:#fff;border-color:var(--ac)}
+.mh-t{font-size:17px;font-weight:800}
+.mh-t span{color:var(--ac)}
+.mh-r{display:flex;align-items:center;gap:10px}
+.tt{display:flex;background:var(--bg3);border-radius:12px;padding:3px;border:1px solid var(--bd);gap:2px}
+.tb2{width:38px;height:34px;border:none;background:transparent;border-radius:9px;cursor:pointer;font-size:14px;transition:all .3s;color:var(--mt);display:flex;align-items:center;justify-content:center}
+.tb2.ac{background:var(--gr);color:#fff;box-shadow:0 4px 12px rgba(124,58,237,.3)}
+.mc{padding:26px}
+.os{display:none}
+.os.ac{display:block;animation:fu .4s}
+@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:24px}
+.sc{background:var(--bg2);border:1px solid var(--bd);border-radius:14px;padding:18px;transition:all .3s}
+.sc:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.sl{font-size:11px;color:var(--mt);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.sv{font-size:26px;font-weight:900;font-family:'JetBrains Mono',monospace}
+.sv.g{color:var(--ok)}.sv.r{color:var(--er)}.sv.o{color:var(--wn)}.sv.p{color:var(--ac)}
+.dc{background:var(--bg2);border:1px solid var(--bd);border-radius:14px;overflow:hidden;margin-bottom:20px}
+.dh{padding:18px 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--bd);flex-wrap:wrap;gap:10px}
+.dt{font-size:16px;font-weight:800}
+.dt span{display:block;font-size:11px;font-weight:400;color:var(--mt);margin-top:2px}
+.ds{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ds input,.ds select{padding:9px 13px;border:1px solid var(--bd);border-radius:9px;font-size:12px;background:var(--bg3);color:var(--tx);font-family:'Inter',sans-serif;outline:none}
+.ds input:focus,.ds select:focus{border-color:var(--ac)}
+.ds input{width:180px}
+.dw{overflow-x:auto}
+.dtb{width:100%;border-collapse:collapse}
+.dtb th{padding:12px 18px;text-align:left;font-size:10px;font-weight:700;color:var(--mt);text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--bd);background:var(--bg3)}
+.dtb td{padding:14px 18px;font-size:13px;border-bottom:1px solid var(--bd);vertical-align:middle}
+.dtb tr:last-child td{border-bottom:none}
+.dtb tr:hover td{background:rgba(124,58,237,.02)}
+.sp{display:inline-flex;align-items:center;gap:5px;padding:4px 11px;border-radius:11px;font-size:11px;font-weight:700}
+.sp.ac{background:rgba(16,185,129,.1);color:var(--ok)}
+.sp.ex{background:rgba(245,158,11,.1);color:var(--wn)}
+.sp.ed{background:rgba(239,68,68,.1);color:var(--er)}
+.sp.pe{background:rgba(124,58,237,.1);color:var(--ac)}
+.ab{display:flex;gap:5px;flex-wrap:wrap}
+.ab2{padding:5px 12px;border:none;border-radius:7px;font-size:11px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .3s;display:inline-flex;align-items:center;gap:4px}
+.ab2:hover{transform:translateY(-1px);opacity:.9}
+.ab2.ext{background:#3b82f6;color:#fff}
+.ab2.del{background:var(--er);color:#fff}
+.ab2.app{background:var(--ok);color:#fff}
+.ab2.rej{background:var(--er);color:#fff}
+.ab2.det{background:var(--ac);color:#fff}
+.sp2{background:var(--bg2);border:1px solid var(--bd);border-radius:14px;padding:24px;margin-bottom:20px}
+.sp2-t{font-size:16px;font-weight:800;margin-bottom:3px}
+.sp2-d{font-size:12px;color:var(--mt);margin-bottom:20px}
+.sf{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.fg{margin-bottom:0}
+.fl2{display:block;font-size:10px;font-weight:700;color:var(--mt);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;font-family:'JetBrains Mono',monospace}
+.fi,.fs{width:100%;padding:12px 14px;border:1.5px solid var(--bd);border-radius:10px;font-size:13px;font-family:'Inter',sans-serif;background:var(--bg3);color:var(--tx);transition:all .3s;outline:none}
+.fi:focus,.fs:focus{border-color:var(--ac);box-shadow:0 0 0 3px rgba(124,58,237,.1)}
+[data-theme="neon"] .fi:focus{border-color:#c084fc;box-shadow:0 0 0 3px rgba(192,132,252,.15)}
+.fs{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:36px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:12px 22px;border:none;border-radius:10px;font-size:13px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;transition:all .3s}
+.bp{background:var(--gb);color:#fff;box-shadow:0 6px 20px rgba(124,58,237,.25)}
+[data-theme="neon"] .bp{background:linear-gradient(90deg,#e879f9,#c084fc,#22d3ee);color:#0a0618;font-weight:800}
+.bp:hover{transform:translateY(-2px)}
+.bo{background:transparent;border:1.5px solid var(--bd);color:var(--tx)}
+.bo:hover{border-color:var(--ac);color:var(--ac)}
+.bs{padding:7px 13px;font-size:11px;border-radius:8px}
+.bd{background:transparent;border:1.5px solid var(--er);color:var(--er)}
+.bd:hover{background:var(--er);color:#fff}
+.ml{margin-top:18px}
+.mli{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--bg3);border:1px solid var(--bd);border-radius:10px;margin-bottom:8px;transition:all .3s;flex-wrap:wrap;gap:8px}
+.mli:hover{border-color:var(--ac)}
+.mli-i h4{font-size:13px;font-weight:700;margin-bottom:2px}
+.mli-i p{font-size:11px;color:var(--mt);font-family:'JetBrains Mono',monospace;word-break:break-all}
+.dm,.cm{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:9999}
+.dm.ac,.cm.ac{display:flex}
+.dmc,.cmc{background:var(--bg2);border:1px solid var(--bd);border-radius:20px;padding:28px;width:100%;max-width:420px;box-shadow:0 10px 40px rgba(0,0,0,.2);text-align:center}
+.dmc{max-width:460px;text-align:left;max-height:80vh;overflow-y:auto}
+.cmc h3{font-size:17px;font-weight:800;margin-bottom:4px}
+.cmc p{font-size:12px;color:var(--tx2);margin-bottom:4px}
+.cpl{display:inline-block;padding:6px 18px;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);border-radius:9px;font-size:14px;font-weight:800;color:var(--ac);margin:8px 0 16px;font-family:'JetBrains Mono',monospace}
+.cbs{display:flex;gap:8px;justify-content:center}
+.dtr{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--bd);font-size:12px;flex-wrap:wrap;gap:3px}
+.dtr:last-child{border-bottom:none}
+.dtl{color:var(--mt);font-weight:500}
+.dtv{font-weight:700;font-family:'JetBrains Mono',monospace;font-size:11px}
+.es{text-align:center;padding:40px 20px;color:var(--mt)}
+.esi{font-size:44px;margin-bottom:12px;opacity:.4}
+.es h3{font-size:16px;font-weight:800;margin-bottom:4px;color:var(--tx2)}
+@media(max-width:768px){.sf{grid-template-columns:1fr}.dtb{font-size:11px}.dtb th,.dtb td{padding:8px 10px}}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--bd);border-radius:3px}
+</style>
+</head>
+<body>
+
+<div class="orbs"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
+
+<div id="ld"><div class="ll"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="ls"></div><div class="lt">Loading Owner...</div></div>
+
+<div class="tb" id="tbox"></div>
+
+<!-- LOGIN -->
+<div class="login-page" id="loginPage">
+  <div class="login-card">
+    <div class="login-logo"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+    <h2 class="login-title">BRANDRETALCORTEX</h2>
+    <p class="login-sub">Owner Dashboard — Secure Access</p>
+    <div class="login-form">
+      <div class="fg">
+        <label class="fl">PIN Admin</label>
+        <input type="password" class="fi" id="loginPin" placeholder="Masukkan PIN" onkeydown="if(event.key==='Enter')doLogin()">
+      </div>
+      <div class="login-err" id="loginErr">PIN salah! Coba lagi.</div>
+      <button class="login-btn" onclick="doLogin()">🔓 Masuk Dashboard</button>
+    </div>
+  </div>
+</div>
+
+<!-- CONFIRM MODAL -->
+<div class="cm" id="cfmM"><div class="cmc"><h3>Konfirmasi Langganan</h3><p id="cfmTx">User akan diaktifkan dengan paket:</p><div class="cpl" id="cfmPl">1 Bulan</div><div class="cbs"><button class="btn bo" onclick="clCfm()" style="width:auto">Batal</button><button class="btn bp" onclick="cfApp()" style="width:auto;padding:10px 20px">✓ OK, Aktifkan</button></div></div></div>
+
+<!-- DETAIL MODAL -->
+<div class="dm" id="detM"><div class="dmc" id="detC"></div></div>
+
+<!-- OWNER DASHBOARD -->
+<div class="ol hidden" id="ownerLayout" style="display:none">
+
+<!-- SIDEBAR - DEFAULT TERTUTUP -->
+<aside class="sb" id="sb">
+  <div class="sb-h">
+    <div class="sb-l"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+    <div class="sb-b"><h3>Owner <span>Dashboard</span></h3><p>Control Center v4.0</p></div>
+  </div>
+  <nav class="sb-n">
+    <div class="nv-l">Main Menu</div>
+    <div class="nv-i ac" onclick="swS('overview',this)"><span class="nv-ic">📊</span><span>Overview</span></div>
+    <div class="nv-i" onclick="swS('active',this)"><span class="nv-ic">👥</span><span>User Aktif</span></div>
+    <div class="nv-i" onclick="swS('expiring',this)"><span class="nv-ic">⏳</span><span>Mau Habis</span><span class="nv-bd" id="exBd">0</span></div>
+    <div class="nv-i" onclick="swS('pending',this)"><span class="nv-ic"></span><span>ACC Pendaftaran</span><span class="nv-bd" id="peBd">0</span></div>
+    <div class="nv-i" onclick="swS('devices',this)"><span class="nv-ic">📱</span><span>Data Pengguna</span></div>
+    <div class="nv-l">System</div>
+    <div class="nv-i" onclick="swS('settings',this)"><span class="nv-ic">⚙️</span><span>Pengaturan Modul</span></div>
+  </nav>
+  <div class="sb-f">
+    <button class="sb-fb lo" onclick="doLogout()">🚪 Logout</button>
+  </div>
+</aside>
+
+<main class="mn">
+  <header class="mh">
+    <div class="mh-l">
+      <button class="mh-tog" id="mhTog" onclick="tgSb()" title="Buka/Tutup Sidebar"></button>
+      <h2 class="mh-t" id="mhT">Owner <span>Dashboard</span></h2>
+    </div>
+    <div class="mh-r">
+      <div class="tt">
+        <button class="tb2 ac" onclick="sTh('light',this)">️</button>
+        <button class="tb2" onclick="sTh('dark',this)"></button>
+        <button class="tb2" onclick="sTh('neon',this)">⚡</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mc">
+    <div class="os ac" id="s-overview">
+      <div class="sg">
+        <div class="sc"><div class="sl">Total User</div><div class="sv p" id="stT">0</div></div>
+        <div class="sc"><div class="sl">User Aktif</div><div class="sv g" id="stA">0</div></div>
+        <div class="sc"><div class="sl">Mau Habis</div><div class="sv o" id="stE">0</div></div>
+        <div class="sc"><div class="sl">Pending</div><div class="sv r" id="stP">0</div></div>
+      </div>
+      <div class="dc">
+        <div class="dh">
+          <div class="dt">Database User Sewa<span>Kelola masa aktif dan status user</span></div>
+          <div class="ds">
+            <input type="text" placeholder="Cari Kode Toko..." id="oSrch" oninput="fltTbl()">
+            <select id="oFlt" onchange="fltTbl()">
+              <option value="all">All Status</option><option value="active">Active</option><option value="expiring">Expiring</option><option value="expired">Expired</option><option value="pending">Pending</option>
+            </select>
+          </div>
+        </div>
+        <div class="dw"><table class="dtb"><thead><tr><th>Kode</th><th>Nama</th><th>PIN</th><th>Berlaku</th><th>Sisa</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="oTb"></tbody></table></div>
+      </div>
+    </div>
+
+    <div class="os" id="s-active">
+      <div class="dc"><div class="dh"><div class="dt">User Aktif<span>Daftar user dengan langganan aktif</span></div></div>
+      <div class="dw"><table class="dtb"><thead><tr><th>Kode</th><th>Nama</th><th>WhatsApp</th><th>Berlaku</th><th>Sisa</th><th>Device</th><th>Aksi</th></tr></thead><tbody id="aTb"></tbody></table></div></div>
+    </div>
+
+    <div class="os" id="s-expiring">
+      <div class="dc"><div class="dh"><div class="dt">User Mau Habis<span>Langganan ≤30 hari</span></div></div>
+      <div class="dw"><table class="dtb"><thead><tr><th>Kode</th><th>Nama</th><th>WhatsApp</th><th>Berlaku</th><th>Sisa</th><th>Aksi</th></tr></thead><tbody id="eTb"></tbody></table></div></div>
+    </div>
+
+    <div class="os" id="s-pending">
+      <div class="dc"><div class="dh"><div class="dt">ACC Pendaftaran Baru<span>Request dari client baru</span></div></div>
+      <div class="dw"><table class="dtb"><thead><tr><th>Kode</th><th>Nama</th><th>WhatsApp</th><th>Paket</th><th>Tgl Daftar</th><th>Aksi</th></tr></thead><tbody id="pTb"></tbody></table></div></div>
+    </div>
+
+    <div class="os" id="s-devices">
+      <div class="dc"><div class="dh"><div class="dt">Data Pengguna & Device<span>Informasi lokasi dan perangkat</span></div></div>
+      <div class="dw"><table class="dtb"><thead><tr><th>Kode</th><th>Nama</th><th>Lokasi</th><th>Device</th><th>Browser</th><th>Aksi</th></tr></thead><tbody id="dTb"></tbody></table></div></div>
+    </div>
+
+    <div class="os" id="s-settings">
+      <div class="sp2">
+        <h3 class="sp2-t">⚙️ Pengaturan Modul</h3>
+        <p class="sp2-d">Tambah modul web baru. Setelah disimpan, modul muncul di portal semua client secara realtime.</p>
+        <div class="sf">
+          <div class="fg"><label class="fl2">Nama Modul</label><input type="text" class="fi" id="nMN" placeholder="Contoh: Planogram"></div>
+          <div class="fg"><label class="fl2">URL / Link Modul</label><input type="url" class="fi" id="nMU" placeholder="https://..."></div>
+          <div class="fg"><label class="fl2">Deskripsi</label><input type="text" class="fi" id="nMD" placeholder="Deskripsi singkat"></div>
+          <div class="fg"><label class="fl2">Icon (emoji)</label><input type="text" class="fi" id="nMI" placeholder="📊" maxlength="4"></div>
+        </div>
+        <button class="btn bp" onclick="addMod()">💾 Simpan Modul Baru</button>
+        <div class="ml" id="modL"><h4 style="margin-bottom:10px;font-size:13px;color:var(--tx2)">Modul Terdaftar:</h4></div>
+      </div>
+    </div>
+  </div>
+</main>
+</div>
+
+<script>
+const OWNER_PIN='admin123';
+function gU(){return JSON.parse(localStorage.getItem('brc_users')||'[]')}
+function sU(u){localStorage.setItem('brc_users',JSON.stringify(u))}
+function gM(){return JSON.parse(localStorage.getItem('brc_modules')||'[]')}
+function sM(m){localStorage.setItem('brc_modules',JSON.stringify(m))}
+
+function initD(){
+  if(!localStorage.getItem('brc_modules'))localStorage.setItem('brc_modules','[]');
+  if(!localStorage.getItem('brc_users'))localStorage.setItem('brc_users','[]');
+}
+
+function checkOwnerSession(){return localStorage.getItem('brc_owner_session')==='active'}
+
+function doLogin(){
+  const pin=document.getElementById('loginPin').value.trim();
+  if(!pin){document.getElementById('loginErr').textContent='Masukkan PIN!';document.getElementById('loginErr').style.display='block';return}
+  if(pin===OWNER_PIN){
+    localStorage.setItem('brc_owner_session','active');
+    document.getElementById('loginPage').classList.add('hidden');
+    document.getElementById('ownerLayout').style.display='flex';
+    document.getElementById('ownerLayout').classList.remove('hidden');
+    document.getElementById('loginErr').style.display='none';
+    document.getElementById('loginPin').value='';
+    updAll();
+    toast('Welcome, Owner!','ok');
+  }else{
+    document.getElementById('loginErr').textContent='PIN salah! Coba lagi.';
+    document.getElementById('loginErr').style.display='block';
+    document.getElementById('loginPin').value='';
+    document.getElementById('loginPin').focus();
+    setTimeout(function(){document.getElementById('loginErr').style.display='none'},2000);
+  }
+}
+
+function doLogout(){
+  if(!confirm('Yakin ingin logout dari Owner Dashboard?'))return;
+  localStorage.removeItem('brc_owner_session');
+  document.getElementById('ownerLayout').style.display='none';
+  document.getElementById('loginPage').classList.remove('hidden');
+  document.getElementById('loginPin').value='';
+  // Reset sidebar ke tertutup
+  document.getElementById('sb').classList.remove('open');
+  document.getElementById('mhTog').classList.remove('active');
+  toast('Logged out successfully','in');
+}
+
+// ===== SIDEBAR TOGGLE - FIXED =====
+function tgSb(){
+  const sb=document.getElementById('sb');
+  const btn=document.getElementById('mhTog');
+  sb.classList.toggle('open');
+  btn.classList.toggle('active');
+  // Ubah icon tombol
+  if(sb.classList.contains('open')){
+    btn.innerHTML='✕';
+    btn.title='Tutup Sidebar';
+  }else{
+    btn.innerHTML='☰';
+    btn.title='Buka Sidebar';
+  }
+}
+
+window.addEventListener('load',function(){
+  initD();
+  const st=localStorage.getItem('brc_theme')||'light';
+  document.documentElement.setAttribute('data-theme',st);
+  setTimeout(function(){
+    document.querySelectorAll('.tb2').forEach(function(b){b.classList.remove('ac');const t=b.getAttribute('onclick');if(t&&t.indexOf("'"+st+"'")!==-1)b.classList.add('ac')});
+  },100);
+  setTimeout(function(){
+    document.getElementById('ld').classList.add('h');
+    if(checkOwnerSession()){
+      document.getElementById('loginPage').classList.add('hidden');
+      document.getElementById('ownerLayout').style.display='flex';
+      document.getElementById('ownerLayout').classList.remove('hidden');
+      updAll();
+    }else{
+      document.getElementById('loginPage').classList.remove('hidden');
+      document.getElementById('ownerLayout').style.display='none';
+      setTimeout(function(){document.getElementById('loginPin').focus()},500);
+    }
+  },1200);
+});
+
+window.addEventListener('storage',function(e){if(e.key==='brc_users'||e.key==='brc_modules')updAll()});
+
+function sTh(t,b){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('brc_theme',t);document.querySelectorAll('.tb2').forEach(function(x){x.classList.remove('ac')});if(b)b.classList.add('ac')}
+
+function swS(s,el){
+  document.querySelectorAll('.os').forEach(function(x){x.classList.remove('ac')});
+  document.getElementById('s-'+s).classList.add('ac');
+  document.querySelectorAll('.nv-i').forEach(function(x){x.classList.remove('ac')});
+  if(el)el.classList.add('ac');
+  const tt={overview:'Owner <span>Dashboard</span>',active:'User <span>Aktif</span>',expiring:'User <span>Mau Habis</span>',pending:'ACC <span>Pendaftaran</span>',devices:'Data <span>Pengguna</span>',settings:'<span>Pengaturan</span> Modul'};
+  document.getElementById('mhT').innerHTML=tt[s]||'Owner <span>Dashboard</span>';
+  if(s==='active')rAT();if(s==='expiring')rET();if(s==='pending')rPT();if(s==='devices')rDT();if(s==='settings')rML();if(s==='overview'){updSt();rOT()}
+  // Auto close sidebar di mobile setelah pilih menu
+  if(window.innerWidth<=768){
+    document.getElementById('sb').classList.remove('open');
+    document.getElementById('mhTog').classList.remove('active');
+    document.getElementById('mhTog').innerHTML='☰';
+  }
+}
+
+function updAll(){updSt();rOT();rAT();rET();rPT();rDT();rML();updBd()}
+
+function updSt(){
+  const u=gU();
+  document.getElementById('stT').textContent=u.length;
+  document.getElementById('stA').textContent=u.filter(function(x){return x.status==='active'}).length;
+  document.getElementById('stE').textContent=u.filter(function(x){return x.status==='active'&&x.plan!=='permanent'&&gRD(x)<=30&&gRD(x)>0}).length;
+  document.getElementById('stP').textContent=u.filter(function(x){return x.status==='pending'}).length;
+}
+
+function updBd(){
+  const u=gU();
+  document.getElementById('exBd').textContent=u.filter(function(x){return x.status==='active'&&x.plan!=='permanent'&&gRD(x)<=30&&gRD(x)>0}).length;
+  document.getElementById('peBd').textContent=u.filter(function(x){return x.status==='pending'}).length;
+}
+
+function gRD(u){if(u.plan==='permanent'||!u.endDate)return 9999;return Math.ceil((new Date(u.endDate)-new Date())/(1000*60*60*24))}
+function gUS(u){if(u.status==='pending')return'pending';if(u.plan==='permanent')return'active';if(!u.endDate)return'active';const d=gRD(u);if(d<=0)return'expired';if(d<=30)return'expiring';return'active'}
+
+function delUser(c){
+  if(!confirm('⚠️ HAPUS PERMANEN user "'+c+'"?\n\nData akan dihapus dari database dan user tidak bisa login lagi.'))return;
+  const u=gU(),idx=u.findIndex(function(x){return x.code===c});
+  if(idx!==-1){u.splice(idx,1);sU(u);toast('User '+c+' dihapus dari database!','er');updAll()}
+}
+
+function rOT(){
+  const u=gU(),sr=document.getElementById('oSrch').value.toLowerCase(),fl=document.getElementById('oFlt').value;
+  const f=u.filter(function(x){const ms=x.code.toLowerCase().includes(sr)||x.name.toLowerCase().includes(sr);const mf=fl==='all'||gUS(x)===fl;return ms&&mf});
+  document.getElementById('oTb').innerHTML=f.length?f.map(function(x){
+    const st=gUS(x),dy=x.plan==='permanent'?'∞':gRD(x)+' Hari',ed=x.plan==='permanent'?'Permanent':(x.endDate||'-');
+    return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td style="font-family:JetBrains Mono;font-size:12px">'+x.pin+'</td><td>'+ed+'</td><td style="font-weight:700">'+dy+'</td><td><span class="sp '+st+'">'+st.charAt(0).toUpperCase()+st.slice(1)+'</span></td><td><div class="ab">'+(st!=='expired'?'<button class="ab2 ext" onclick="extU(\''+x.code+'\')">📅 Extend</button>':'')+'<button class="ab2 del" onclick="delUser(\''+x.code+'\')">🗑️ Off</button><button class="ab2 det" onclick="shDet(\''+x.code+'\')">👁️</button></div></td></tr>'
+  }).join(''):'<tr><td colspan="7"><div class="es"><div class="esi"></div><h3>Belum ada user terdaftar</h3><p>Client yang daftar akan muncul di sini setelah di-ACC.</p></div></td></tr>';
+}
+function fltTbl(){rOT()}
+
+function rAT(){
+  const u=gU().filter(function(x){return x.status==='active'});
+  document.getElementById('aTb').innerHTML=u.length?u.map(function(x){const d=x.plan==='permanent'?'∞':gRD(x)+' Hari';return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td>'+x.whatsapp+'</td><td>'+(x.plan==='permanent'?'Permanent':x.endDate)+'</td><td style="font-weight:700">'+d+'</td><td style="font-size:11px;color:var(--mt)">'+(x.deviceType||'-')+'</td><td><div class="ab"><button class="ab2 ext" onclick="extU(\''+x.code+'\')"> Extend</button><button class="ab2 del" onclick="delUser(\''+x.code+'\')">🗑️ Off</button></div></td></tr>'}).join(''):'<tr><td colspan="7"><div class="es"><div class="esi">👥</div><h3>Tidak ada user aktif</h3></div></td></tr>';
+}
+
+function rET(){
+  const u=gU().filter(function(x){return x.status==='active'&&x.plan!=='permanent'&&gRD(x)<=30&&gRD(x)>0});
+  document.getElementById('eTb').innerHTML=u.length?u.map(function(x){const d=gRD(x);return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td>'+x.whatsapp+'</td><td>'+x.endDate+'</td><td style="font-weight:700;color:var(--wn)">'+d+' Hari</td><td><div class="ab"><button class="ab2 ext" onclick="extU(\''+x.code+'\')">📅 Perpanjang</button><button class="ab2 del" onclick="delUser(\''+x.code+'\')">🗑️ Off</button></div></td></tr>'}).join(''):'<tr><td colspan="6"><div class="es"><div class="esi">⏳</div><h3>Tidak ada user mau habis</h3></div></td></tr>';
+}
+
+function rPT(){
+  const u=gU().filter(function(x){return x.status==='pending'});
+  document.getElementById('pTb').innerHTML=u.length?u.map(function(x){const pl=x.plan==='permanent'?'Permanent':x.plan+' Bulan';return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td>'+x.whatsapp+'</td><td><span class="sp pe">'+pl+'</span></td><td>'+x.registeredAt+'</td><td><div class="ab"><button class="ab2 app" onclick="appU(\''+x.code+'\')">✓ ACC</button><button class="ab2 rej" onclick="rejU(\''+x.code+'\')">✕ Tolak</button></div></td></tr>'}).join(''):'<tr><td colspan="6"><div class="es"><div class="esi"></div><h3>Tidak ada pendaftaran pending</h3></div></td></tr>';
+}
+
+function rDT(){
+  const u=gU().filter(function(x){return x.status!=='pending'});
+  document.getElementById('dTb').innerHTML=u.length?u.map(function(x){const lc=x.location?x.location.lat.toFixed(4)+', '+x.location.lng.toFixed(4):'Belum';return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td><span class="sp '+(x.locationConfirmed?'ac':'ed')+'">'+(x.locationConfirmed?'✅ '+lc:'❌ Belum')+'</span></td><td style="font-size:11px;color:var(--mt)">'+(x.deviceType||'-')+'</td><td style="font-size:11px;color:var(--mt)">'+(x.browser||'-')+'</td><td><div class="ab"><button class="ab2 det" onclick="shDet(\''+x.code+'\')">👁️ Detail</button><button class="ab2 del" onclick="delUser(\''+x.code+'\')">🗑️ Off</button></div></td></tr>'}).join(''):'<tr><td colspan="6"><div class="es"><div class="esi">📱</div><h3>Belum ada data pengguna</h3></div></td></tr>';
+}
+
+function shDet(c){
+  const u=gU().find(function(x){return x.code===c});if(!u)return;
+  const d=u.plan==='permanent'?'':gRD(u)+' Hari';
+  let h='<div style="text-align:center;margin-bottom:14px"><div style="width:50px;height:50px;border-radius:13px;background:var(--gr);display:inline-flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:8px">🏪</div><h3 style="font-size:17px;font-weight:800">'+u.name+'</h3><p style="font-size:10px;color:var(--mt);font-family:JetBrains Mono">KODE: '+u.code+'</p></div>';
+  h+='<div class="dtr"><span class="dtl">WhatsApp</span><span class="dtv">'+u.whatsapp+'</span></div>';
+  h+='<div class="dtr"><span class="dtl">PIN</span><span class="dtv">'+u.pin+'</span></div>';
+  h+='<div class="dtr"><span class="dtl">Paket</span><span class="dtv">'+(u.plan==='permanent'?'Permanent':u.plan+' Bulan')+'</span></div>';
+  h+='<div class="dtr"><span class="dtl">Status</span><span class="dtv">'+u.status+'</span></div>';
+  h+='<div class="dtr"><span class="dtl">Sisa Waktu</span><span class="dtv">'+d+'</span></div>';
+  h+='<div class="dtr"><span class="dtl">Mulai</span><span class="dtv">'+u.startDate+'</span></div>';
+  h+='<div class="dtr"><span class="dtl">Berakhir</span><span class="dtv">'+(u.endDate||'Permanent')+'</span></div>';
+  h+='<div class="dtr"><span class="dtl">Device</span><span class="dtv">'+(u.deviceType||'-')+'</span></div>';
+  h+='<div class="dtr"><span class="dtl">Browser</span><span class="dtv">'+(u.browser||'-')+'</span></div>';
+  h+='<div class="dtr"><span class="dtl">OS</span><span class="dtv">'+(u.os||'-')+'</span></div>';
+  h+='<div class="dtr"><span class="dtl">Layar</span><span class="dtv">'+(u.screen||'-')+'</span></div>';
+  h+='<div class="dtr"><span class="dtl">Lokasi</span><span class="dtv">'+(u.location?u.location.address:'Belum')+'</span></div>';
+  h+='<div class="dtr"><span class="dtl">Terdaftar</span><span class="dtv">'+u.registeredAt+'</span></div>';
+  h+='<div style="display:flex;gap:8px;margin-top:14px"><button class="btn bp bs" onclick="extU(\''+u.code+'\');clDet()" style="flex:1">📅 Extend</button><button class="btn bd bs" onclick="delUser(\''+u.code+'\');clDet()" style="flex:1">🗑️ Hapus</button></div>';
+  h+='<button class="btn bo" onclick="clDet()" style="width:100%;margin-top:8px">Tutup</button>';
+  document.getElementById('detC').innerHTML=h;
+  document.getElementById('detM').classList.add('ac');
+}
+function clDet(){document.getElementById('detM').classList.remove('ac')}
+
+let paC=null;
+function appU(c){
+  const u=gU().find(function(x){return x.code===c});if(!u)return;
+  paC=c;
+  const pl=u.plan==='permanent'?'Permanent':u.plan+' Bulan';
+  document.getElementById('cfmTx').textContent='User "'+u.name+'" ('+c+') akan diaktifkan dengan paket:';
+  document.getElementById('cfmPl').textContent=pl;
+  document.getElementById('cfmM').classList.add('ac');
+}
+function cfApp(){
+  if(!paC)return;
+  const u=gU(),idx=u.findIndex(function(x){return x.code===paC});
+  if(idx===-1)return;
+  u[idx].status='active';u[idx].startDate=new Date().toISOString().split('T')[0];
+  if(u[idx].plan==='permanent')u[idx].endDate=null;
+  else{const e=new Date();e.setMonth(e.getMonth()+parseInt(u[idx].plan));u[idx].endDate=e.toISOString().split('T')[0]}
+  sU(u);clCfm();toast('User '+paC+' diaktifkan!','ok');updAll();paC=null;
+}
+function clCfm(){document.getElementById('cfmM').classList.remove('ac')}
+
+function rejU(c){if(!confirm('Tolak & HAPUS pendaftaran '+c+'?'))return;const u=gU(),idx=u.findIndex(function(x){return x.code===c});if(idx!==-1){u.splice(idx,1);sU(u);toast('Pendaftaran '+c+' ditolak & dihapus.','in');updAll()}}
+
+function extU(c){
+  const u=gU().find(function(x){return x.code===c});if(!u)return;
+  const pl=prompt('Perpanjang langganan '+u.name+' ('+c+')\nKetik: 1, 3, 6, atau permanent',u.plan);
+  if(!pl)return;
+  const us=gU(),idx=us.findIndex(function(x){return x.code===c});
+  us[idx].plan=pl;us[idx].status='active';us[idx].startDate=new Date().toISOString().split('T')[0];
+  if(pl==='permanent')us[idx].endDate=null;
+  else{const e=new Date();e.setMonth(e.getMonth()+parseInt(pl));us[idx].endDate=e.toISOString().split('T')[0]}
+  sU(us);toast('Langganan '+c+' diperpanjang ke '+(pl==='permanent'?'Permanent':pl+' Bulan')+'!','ok');updAll();
+}
+
+function addMod(){
+  const n=document.getElementById('nMN').value.trim(),u=document.getElementById('nMU').value.trim(),d=document.getElementById('nMD').value.trim(),i=document.getElementById('nMI').value.trim()||'📦';
+  if(!n||!u){toast('Nama dan URL wajib diisi!','er');return}
+  const ms=gM();ms.push({id:'mod_'+Date.now(),name:n.toUpperCase(),url:u,desc:d||'Modul operasional retail',icon:i});
+  sM(ms);
+  document.getElementById('nMN').value='';document.getElementById('nMU').value='';document.getElementById('nMD').value='';document.getElementById('nMI').value='';
+  rML();toast('Modul "'+n+'" ditambahkan! Muncul di semua client.','ok');
+}
+function rmMod(id){if(!confirm('Hapus modul ini dari semua client?'))return;sM(gM().filter(function(m){return m.id!==id}));rML();toast('Modul dihapus.','in')}
+
+function rML(){
+  const ms=gM();
+  document.getElementById('modL').innerHTML='<h4 style="margin-bottom:10px;font-size:13px;color:var(--tx2)">Modul Terdaftar ('+ms.length+'):</h4>'+
+  (ms.length?ms.map(function(m){return '<div class="mli"><div class="mli-i"><h4>'+m.icon+' '+m.name+'</h4><p>'+m.url+'</p></div><div class="ab"><button class="ab2 del" onclick="rmMod(\''+m.id+'\')">🗑️ Hapus</button></div></div>'}).join(''):'<div class="es" style="padding:20px"><p>Belum ada modul. Tambahkan modul baru di atas.</p></div>');
+}
+
+function toast(m,t){
+  t=t||'in';
+  const c=document.getElementById('tbox'),d=document.createElement('div');
+  d.className='ts '+t;
+  const ic={ok:'✓',er:'✕',wn:'⚠',in:'ℹ'};
+  d.innerHTML='<span>'+(ic[t]||'')+'</span> '+m;
+  c.appendChild(d);
+  setTimeout(function(){d.remove()},4000);
+}
+
+document.querySelectorAll('.dm,.cm').forEach(function(m){m.addEventListener('click',function(e){if(e.target===m)m.classList.remove('ac')})});
+</script>
+</body>
+</html>
