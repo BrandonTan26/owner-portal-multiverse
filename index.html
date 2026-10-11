@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>BrandRetalCortex - One Central Hub</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
@@ -32,7 +32,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 @keyframes ti{from{transform:translateX(120%);opacity:0}to{transform:translateX(0);opacity:1}}
 @keyframes to2{to{opacity:0;transform:translateY(-20px)}}
 
-/* ===== LANDING PAGE ===== */
+/* LANDING */
 .landing{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;position:relative;z-index:1}
 .landing-card{background:var(--bg2);border:1px solid var(--bd);border-radius:24px;padding:40px;width:100%;max-width:480px;box-shadow:0 20px 60px rgba(0,0,0,.1);text-align:center}
 [data-theme="neon"] .landing-card{box-shadow:0 20px 60px rgba(192,132,252,.15);border-color:rgba(192,132,252,.2)}
@@ -40,15 +40,18 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 .l-logo svg{width:36px;height:36px;fill:#fff}
 .l-title{font-size:20px;font-weight:800;margin-bottom:4px;font-family:'JetBrains Mono',monospace}
 [data-theme="neon"] .l-title{background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.l-sub{font-size:12px;color:var(--mt);margin-bottom:28px}
-.l-modes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.l-sub{font-size:12px;color:var(--mt);margin-bottom:24px}
+.l-modes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
 .l-mode{padding:20px 16px;background:var(--bg3);border:2px solid var(--bd);border-radius:14px;cursor:pointer;transition:all .3s;text-align:center}
 .l-mode:hover{border-color:var(--ac);transform:translateY(-2px)}
 .l-mode .ic{font-size:28px;margin-bottom:8px}
 .l-mode .nm{font-size:13px;font-weight:700;margin-bottom:3px}
 .l-mode .ds{font-size:10px;color:var(--mt)}
+.tt{display:flex;background:var(--bg3);border-radius:12px;padding:3px;border:1px solid var(--bd);gap:2px}
+.tb2{width:36px;height:32px;border:none;background:transparent;border-radius:8px;cursor:pointer;font-size:13px;transition:all .3s;color:var(--mt);display:flex;align-items:center;justify-content:center}
+.tb2.ac{background:var(--gr);color:#fff;box-shadow:0 4px 12px rgba(124,58,237,.3)}
 
-/* ===== AUTH FORMS ===== */
+/* AUTH */
 .auth-form{display:none;text-align:left}
 .auth-form.ac{display:block;animation:fu .4s}
 @keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
@@ -70,8 +73,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 .back-link{margin-top:14px;font-size:12px;color:var(--mt);cursor:pointer;display:inline-block}
 .back-link:hover{color:var(--ac)}
 .auth-err{color:var(--er);font-size:12px;font-weight:600;margin-bottom:10px;display:none;text-align:center}
+.tab-bar{display:flex;background:var(--bg3);border-radius:12px;padding:3px;margin-bottom:18px;border:1px solid var(--bd)}
+.tab-btn{flex:1;padding:9px;border:none;background:transparent;border-radius:9px;font-size:12px;font-weight:700;color:var(--mt);cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif}
+.tab-btn.ac{background:var(--bg2);color:var(--tx);box-shadow:0 2px 8px rgba(0,0,0,.08)}
 
-/* ===== HEADER (shared) ===== */
+/* HEADER */
 .hdr{background:var(--bg2);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:12px}
 .hdr-l{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .hdr-logo{width:38px;height:38px;border-radius:10px;background:var(--gr);display:flex;align-items:center;justify-content:center}
@@ -82,16 +88,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 .sbb{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:18px;font-size:9px;font-weight:700;color:var(--ok);text-transform:uppercase;letter-spacing:1.5px;font-family:'JetBrains Mono',monospace}
 .sd{width:6px;height:6px;border-radius:50%;background:var(--ok);animation:pu 2s infinite}
 @keyframes pu{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
-.tt{display:flex;background:var(--bg3);border-radius:12px;padding:3px;border:1px solid var(--bd);gap:2px}
-.tb2{width:36px;height:32px;border:none;background:transparent;border-radius:8px;cursor:pointer;font-size:13px;transition:all .3s;color:var(--mt);display:flex;align-items:center;justify-content:center}
-.tb2.ac{background:var(--gr);color:#fff;box-shadow:0 4px 12px rgba(124,58,237,.3)}
 .uc{display:flex;align-items:center;gap:7px;padding:4px 12px 4px 4px;background:var(--bg3);border:1px solid var(--bd);border-radius:18px;cursor:pointer;transition:all .3s}
 .uc:hover{border-color:var(--ac)}
 .ua{width:26px;height:26px;border-radius:50%;background:var(--gr);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff}
 .un{font-size:11px;font-weight:700}
 .ud{font-size:8px;color:var(--mt);font-family:'JetBrains Mono',monospace}
 
-/* ===== CLIENT CONTENT ===== */
+/* CLIENT CONTENT */
 .cc{flex:1;padding:24px;max-width:1300px;margin:0 auto;width:100%}
 .wb{background:var(--bg3);border-radius:22px;padding:32px;margin-bottom:24px;border:1px solid var(--bd);position:relative;overflow:hidden}
 .wb::before{content:'';position:absolute;top:-50%;right:-20%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.08),transparent 70%)}
@@ -147,7 +150,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 .es h3{font-size:15px;font-weight:800;margin-bottom:5px}
 .es p{font-size:11px;color:var(--mt);max-width:360px;margin:0 auto;line-height:1.5}
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 .cf{background:var(--bg2);border-top:1px solid var(--bd);position:relative;overflow:hidden;margin-top:auto}
 .cf::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--gr)}
 [data-theme="neon"] .cf::before{background:linear-gradient(90deg,#e879f9,#c084fc,#22d3ee,#e879f9);background-size:200% 100%;animation:ns 3s linear infinite}
@@ -176,7 +179,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 .ss{position:fixed;bottom:8px;right:8px;width:16px;height:16px;cursor:pointer;opacity:.1;transition:all .3s;z-index:50;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ac);user-select:none}
 .ss:hover{opacity:.3}
 
-/* ===== MODULE VIEWER ===== */
+/* MODULE VIEWER */
 .mv{position:fixed;inset:0;background:var(--bg);z-index:1000;display:none;flex-direction:column}
 .mv.ac{display:flex}
 .mvh{background:var(--bg2);border-bottom:1px solid var(--bd);padding:11px 18px;display:flex;align-items:center;justify-content:space-between}
@@ -184,16 +187,19 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 .mvc{padding:7px 14px;background:var(--er);color:#fff;border:none;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif}
 .mvf{flex:1;border:none;width:100%;background:#fff}
 
-/* ===== OWNER SIDEBAR ===== */
+/* OWNER SIDEBAR */
 .ol{display:flex;min-height:100vh;position:relative;z-index:1}
 .sb{width:var(--sw);background:var(--bg2);border-right:1px solid var(--bd);display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;z-index:100;transition:transform .35s cubic-bezier(.4,0,.2,1);transform:translateX(-100%)}
 .sb.open{transform:translateX(0)}
-.sb-h{padding:16px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--bd)}
+.sb-h{padding:16px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--bd)}
+.sb-h-l{display:flex;align-items:center;gap:10px}
 .sb-l{width:38px;height:38px;border-radius:10px;background:var(--gr);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sb-l svg{width:18px;height:18px;fill:#fff}
 .sb-b h3{font-size:13px;font-weight:800;font-family:'JetBrains Mono',monospace}
 .sb-b h3 span{color:var(--ac)}
 .sb-b p{font-size:8px;color:var(--mt);margin-top:1px}
+.sb-close{width:32px;height:32px;border-radius:8px;background:var(--bg3);border:1px solid var(--bd);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .3s;color:var(--tx)}
+.sb-close:hover{background:var(--er);color:#fff;border-color:var(--er)}
 .sb-n{flex:1;padding:12px 8px;overflow-y:auto}
 .nv-l{font-size:9px;font-weight:700;color:var(--mt);text-transform:uppercase;letter-spacing:1.5px;padding:10px 12px 5px}
 .nv-i{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:9px;cursor:pointer;transition:all .3s;margin-bottom:2px;color:var(--tx2);font-size:12px;font-weight:500}
@@ -277,6 +283,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 .bli{width:64px;height:64px;border-radius:50%;background:rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px}
 .blt{font-size:18px;font-weight:900;margin-bottom:6px;color:var(--er)}
 .bld{font-size:12px;color:var(--tx2);max-width:340px;line-height:1.5;margin-bottom:20px}
+.sync-indicator{position:fixed;top:20px;left:20px;padding:8px 14px;background:var(--bg2);border:1px solid var(--bd);border-radius:10px;font-size:11px;font-weight:600;color:var(--ok);display:flex;align-items:center;gap:6px;z-index:50;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.sync-indicator .dot{width:6px;height:6px;border-radius:50%;background:var(--ok);animation:pu 2s infinite}
 @media(max-width:768px){.sf{grid-template-columns:1fr}.dtb{font-size:10px}.dtb th,.dtb td{padding:7px 9px}.l-modes{grid-template-columns:1fr}}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--bd);border-radius:3px}
 </style>
@@ -284,53 +292,46 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 <body>
 
 <div class="orbs"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
-<div id="ld"><div class="ll"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="ls"></div><div class="lt">Initializing...</div></div>
+<div id="ld"><div class="ll"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="ls"></div><div class="lt">Connecting to Server...</div></div>
 <div class="tb" id="tbox"></div>
+
+<!-- SYNC INDICATOR -->
+<div class="sync-indicator" id="syncInd" style="display:none"><span class="dot"></span><span id="syncText">Connected</span></div>
 
 <!-- MODALS -->
 <div class="dm" id="detM"><div class="dmc" id="detC"></div></div>
 <div class="cm" id="cfmM"><div class="cmc"><h3>Konfirmasi Langganan</h3><p id="cfmTx">User akan diaktifkan dengan paket:</p><div class="cpl" id="cfmPl">1 Bulan</div><div class="cbs"><button class="btn bo" onclick="clCfm()" style="width:auto">Batal</button><button class="btn bp" onclick="cfApp()" style="width:auto;padding:10px 18px">✓ OK, Aktifkan</button></div></div></div>
-<div class="blk" id="blkS"><div class="bli">🚫</div><h2 class="blt">Akses Diblokir</h2><p class="bld">Masa langganan habis atau akun dinonaktifkan. Hubungi admin untuk memperpanjang.</p><button class="btn bp" onclick="backToLanding()" style="max-width:220px">Kembali ke Home</button></div>
+<div class="blk" id="blkS"><div class="bli"></div><h2 class="blt">Akses Diblokir</h2><p class="bld">Masa langganan habis atau akun dinonaktifkan. Hubungi admin untuk memperpanjang.</p><button class="btn bp" onclick="backToLanding()" style="max-width:220px">Kembali ke Home</button></div>
 <div class="blk" id="devS"><div class="bli">📱</div><h2 class="blt">Perangkat Tidak Terdaftar</h2><p class="bld">Akun ini hanya untuk 1 perangkat. Hubungi admin untuk mengganti perangkat.</p><button class="btn bp" onclick="backToLanding()" style="max-width:220px">Kembali ke Home</button></div>
 
-<!-- ===== LANDING PAGE ===== -->
+<!-- LANDING -->
 <div id="landingPage" class="landing">
   <div class="landing-card">
     <div class="l-logo"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
     <h2 class="l-title">BRANDRETALCORTEX</h2>
-    <p class="l-sub">One Central Hub — Pilih Mode Akses</p>
+    <p class="l-sub">One Central Hub — Realtime Cloud Server</p>
     <div class="l-modes">
-      <div class="l-mode" onclick="showAuth('client')">
-        <div class="ic">🏪</div>
-        <div class="nm">Client Portal</div>
-        <div class="ds">Masuk / Daftar Toko</div>
-      </div>
-      <div class="l-mode" onclick="showAuth('owner')">
-        <div class="ic"></div>
-        <div class="nm">Owner Dashboard</div>
-        <div class="ds">Kelola Semua User</div>
-      </div>
+      <div class="l-mode" onclick="showAuth('client')"><div class="ic">🏪</div><div class="nm">Client Portal</div><div class="ds">Masuk / Daftar Toko</div></div>
+      <div class="l-mode" onclick="showAuth('owner')"><div class="ic"></div><div class="nm">Owner Dashboard</div><div class="ds">Kelola Semua User</div></div>
     </div>
-    <div class="tt" style="justify-content:center;margin-top:10px">
+    <div class="tt" style="justify-content:center">
       <button class="tb2 ac" onclick="sTh('light',this)">☀️</button>
-      <button class="tb2" onclick="sTh('dark',this)"></button>
-      <button class="tb2" onclick="sTh('neon',this)"></button>
+      <button class="tb2" onclick="sTh('dark',this)">🌙</button>
+      <button class="tb2" onclick="sTh('neon',this)">⚡</button>
     </div>
   </div>
 </div>
 
-<!-- ===== AUTH PAGE ===== -->
+<!-- AUTH -->
 <div id="authPage" style="display:none" class="landing">
   <div class="landing-card">
     <div class="l-logo"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
     <h2 class="l-title" id="authTitle">BRANDRETALCORTEX</h2>
     <p class="l-sub" id="authSub">Pilih mode akses</p>
-    
-    <!-- CLIENT AUTH -->
     <div class="auth-form" id="clientAuth">
-      <div style="display:flex;background:var(--bg3);border-radius:12px;padding:3px;margin-bottom:18px;border:1px solid var(--bd)">
-        <button class="btn bo" style="flex:1;padding:9px;font-size:12px;border-radius:9px" id="tabLogin" onclick="swTab('login')">Masuk</button>
-        <button class="btn bo" style="flex:1;padding:9px;font-size:12px;border-radius:9px;background:transparent" id="tabReg" onclick="swTab('reg')">Daftar Baru</button>
+      <div class="tab-bar">
+        <button class="tab-btn ac" id="tabLogin" onclick="swTab('login')">Masuk</button>
+        <button class="tab-btn" id="tabReg" onclick="swTab('reg')">Daftar Baru</button>
       </div>
       <div id="loginForm">
         <div class="fg"><label class="fl">Kode Toko</label><input type="text" class="fi" id="lgC" placeholder=""></div>
@@ -349,8 +350,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
       </div>
       <div class="back-link" onclick="backToLanding()">← Kembali ke Home</div>
     </div>
-
-    <!-- OWNER AUTH -->
     <div class="auth-form" id="ownerAuth">
       <div class="fg"><label class="fl">PIN Admin</label><input type="password" class="fi" id="owPin" placeholder="Masukkan PIN" onkeydown="if(event.key==='Enter')doOwLogin()"></div>
       <div class="auth-err" id="owErr">PIN salah!</div>
@@ -360,7 +359,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
   </div>
 </div>
 
-<!-- ===== CLIENT DASHBOARD ===== -->
+<!-- CLIENT DASHBOARD -->
 <div id="clientDash" style="display:none">
   <div style="min-height:100vh;display:flex;flex-direction:column;position:relative;z-index:1">
     <header class="hdr">
@@ -370,25 +369,14 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
         <div class="sbb"><div class="sd"></div>Online</div>
       </div>
       <div class="hdr-r">
-        <div class="tt"><button class="tb2" onclick="sTh('light',this)">☀️</button><button class="tb2" onclick="sTh('dark',this)">🌙</button><button class="tb2" onclick="sTh('neon',this)">⚡</button></div>
+        <div class="tt"><button class="tb2" onclick="sTh('light',this)">☀️</button><button class="tb2" onclick="sTh('dark',this)">🌙</button><button class="tb2" onclick="sTh('neon',this)"></button></div>
         <div class="uc" onclick="shDet()"><div class="ua" id="cAv">?</div><div><div class="un" id="cNm">Store</div><div class="ud" id="cCd">----</div></div></div>
-        <button class="btn bd bs" onclick="backToLanding()">↪ Keluar</button>
+        <button class="btn bd bs" onclick="backToLanding()"> Keluar</button>
       </div>
     </header>
     <div class="cc">
-      <div class="wb">
-        <div class="wt"><span class="sd"></span>Enterprise Retail Operating System</div>
-        <h1 class="wt2">WELCOME TO <span class="hl">BRANDRETALCORTEX</span></h1>
-        <p class="wd">Smart Retail. One Powerful Platform... <strong>Manage. Monitor. Optimize.</strong></p>
-        <div class="wf"><div class="ft">⚡ High-Speed Gateway</div><div class="ft">🛡️ Encrypted Retail Node</div><div class="ft">🔄 Realtime Data Sync</div><div class="ft">🔐 Dedicated Multi-User Auth</div></div>
-      </div>
-      <div class="si">
-        <div class="sif">
-          <div class="sic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
-          <div><div class="scl">Identitas Toko Aktif</div><div class="snm" id="cSN">---</div><div style="margin-top:3px"><span class="scl">Kode Toko: </span><span class="scv" id="cSC">----</span></div></div>
-        </div>
-        <button class="btn bo bs" onclick="shDet()">ℹ️ Detail Akun</button>
-      </div>
+      <div class="wb"><div class="wt"><span class="sd"></span>Enterprise Retail Operating System</div><h1 class="wt2">WELCOME TO <span class="hl">BRANDRETALCORTEX</span></h1><p class="wd">Smart Retail. One Powerful Platform... <strong>Manage. Monitor. Optimize.</strong></p><div class="wf"><div class="ft">⚡ High-Speed Gateway</div><div class="ft">️ Encrypted Retail Node</div><div class="ft">🔄 Realtime Data Sync</div><div class="ft">🔐 Dedicated Multi-User Auth</div></div></div>
+      <div class="si"><div class="sif"><div class="sic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div><div><div class="scl">Identitas Toko Aktif</div><div class="snm" id="cSN">---</div><div style="margin-top:3px"><span class="scl">Kode Toko: </span><span class="scv" id="cSC">----</span></div></div></div><button class="btn bo bs" onclick="shDet()">ℹ️ Detail Akun</button></div>
       <div class="sub" id="subB"><div class="subi"><div class="subic" id="subI">♾️</div><div class="subtx" id="subTx">MEMUAT...<span>-</span></div></div><div class="subst ac" id="subSt">● Aktif</div></div>
       <div class="ew" id="expW" style="display:none"><span>⚠️</span><span id="expTx">Langganan akan segera habis!</span></div>
       <div class="mt">📡 <span id="modC">0</span> Modul Operasional Retail</div>
@@ -404,26 +392,32 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
         <div class="fco"><h4>📞 Support</h4><ul><li><span class="dt"></span>Admin Dashboard</li><li><span class="dt"></span>24/7 Monitoring</li><li><span class="dt"></span>Auto Sync System</li><li><span class="dt"></span>Priority Support</li></ul></div>
       </div>
       <div class="ftq"><p>⚡ Smart Retail. One Powerful Platform.</p><span>Manage. Monitor. Optimize. — All in one centralized hub.</span></div>
-      <div class="fbo"><div class="fcr">© 2026 <span>BRANDRETALCORTEX</span> — All Rights Reserved</div><div class="fbd"><div class="fbg"><span class="bd2"></span>System Online</div><div class="fbg">🔒 SSL Secured</div><div class="fbg">⚡ v4.0</div></div></div>
+      <div class="fbo"><div class="fcr">© 2026 <span>BRANDRETALCORTEX</span> — All Rights Reserved</div><div class="fbd"><div class="fbg"><span class="bd2"></span>System Online</div><div class="fbg">🔒 SSL Secured</div><div class="fbg"> v4.0</div></div></div>
     </div></footer>
     <div class="ss" id="secS" onclick="hSt()">✦</div>
   </div>
 </div>
 
-<!-- ===== OWNER DASHBOARD ===== -->
+<!-- OWNER DASHBOARD -->
 <div id="ownerDash" style="display:none">
   <div class="ol">
     <aside class="sb" id="sb">
-      <div class="sb-h"><div class="sb-l"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="sb-b"><h3>Owner <span>Dashboard</span></h3><p>Control Center v4.0</p></div></div>
+      <div class="sb-h">
+        <div class="sb-h-l">
+          <div class="sb-l"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <div class="sb-b"><h3>Owner <span>Dashboard</span></h3><p>Control Center v4.0</p></div>
+        </div>
+        <button class="sb-close" onclick="tgSb()" title="Tutup Sidebar">✕</button>
+      </div>
       <nav class="sb-n">
         <div class="nv-l">Main Menu</div>
-        <div class="nv-i ac" onclick="swS('overview',this)"><span class="nv-ic"></span><span>Overview</span></div>
+        <div class="nv-i ac" onclick="swS('overview',this)"><span class="nv-ic">📊</span><span>Overview</span></div>
         <div class="nv-i" onclick="swS('active',this)"><span class="nv-ic">👥</span><span>User Aktif</span></div>
-        <div class="nv-i" onclick="swS('expiring',this)"><span class="nv-ic">⏳</span><span>Mau Habis</span><span class="nv-bd" id="exBd">0</span></div>
+        <div class="nv-i" onclick="swS('expiring',this)"><span class="nv-ic"></span><span>Mau Habis</span><span class="nv-bd" id="exBd">0</span></div>
         <div class="nv-i" onclick="swS('pending',this)"><span class="nv-ic">📋</span><span>ACC Pendaftaran</span><span class="nv-bd" id="peBd">0</span></div>
         <div class="nv-i" onclick="swS('devices',this)"><span class="nv-ic">📱</span><span>Data Pengguna</span></div>
         <div class="nv-l">System</div>
-        <div class="nv-i" onclick="swS('settings',this)"><span class="nv-ic">️</span><span>Pengaturan Modul</span></div>
+        <div class="nv-i" onclick="swS('settings',this)"><span class="nv-ic">⚙️</span><span>Pengaturan Modul</span></div>
       </nav>
       <div class="sb-f">
         <button class="sb-fb bk" onclick="backToLanding()">🏠 Ke Home</button>
@@ -433,12 +427,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
     <main class="mn">
       <header class="mh">
         <div class="mh-l">
-          <button class="mh-tog" id="mhTog" onclick="tgSb()" title="Toggle Sidebar">☰</button>
+          <button class="mh-tog" id="mhTog" onclick="tgSb()" title="Buka/Tutup Sidebar">☰</button>
           <h2 class="mh-t" id="mhT">Owner <span>Dashboard</span></h2>
         </div>
         <div class="mh-r">
           <button class="mh-refresh" id="mhRefresh" onclick="manualRefresh()" title="Refresh Data">🔄</button>
-          <div class="tt"><button class="tb2 ac" onclick="sTh('light',this)">☀️</button><button class="tb2" onclick="sTh('dark',this)"></button><button class="tb2" onclick="sTh('neon',this)">⚡</button></div>
+          <div class="tt"><button class="tb2 ac" onclick="sTh('light',this)">☀️</button><button class="tb2" onclick="sTh('dark',this)">🌙</button><button class="tb2" onclick="sTh('neon',this)">⚡</button></div>
         </div>
       </header>
       <div class="mc2">
@@ -461,23 +455,96 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
   </div>
 </div>
 
-<!-- MODULE VIEWER -->
 <div class="mv" id="modV"><div class="mvh"><div class="mvt"><span id="mvNm">Module</span></div><button class="mvc" onclick="clMod()">✕ Tutup Modul</button></div><iframe class="mvf" id="mvFr" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe></div>
 
+<!-- FIREBASE SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
 <script>
+// ===== GANTI DENGAN FIREBASE CONFIG KAMU =====
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  databaseURL: "https://YOUR_PROJECT-default-rtdb.firebaseio.com",
+  projectId: "YOUR_PROJECT",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+// Initialize Firebase
+let db = null;
+let useFirebase = false;
+try {
+  if (firebaseConfig.apiKey !== "YOUR_API_KEY") {
+    firebase.initializeApp(firebaseConfig);
+    db = firebase.database();
+    useFirebase = true;
+    console.log('Firebase connected');
+  }
+} catch(e) {
+  console.log('Firebase not configured, using localStorage fallback');
+}
+
 const OWNER_PIN='admin123';
-let brcChannel;try{brcChannel=new BroadcastChannel('brc_sync')}catch(e){brcChannel=null}
-let currentMode=null,currentClient=null,lastUC=0,lastMC=0;
+let currentMode=null,currentClient=null;
 
-function gDT(){return/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)?'Mobile':'Desktop'}
-function gBR(){const u=navigator.userAgent;if(u.includes('Firefox'))return'Firefox';if(u.includes('SamsungBrowser'))return'Samsung Internet';if(u.includes('Opera')||u.includes('OPR'))return'Opera';if(u.includes('Edg'))return'Edge';if(u.includes('Chrome'))return'Chrome';if(u.includes('Safari'))return'Safari';return'Unknown'}
-function gOS(){const u=navigator.userAgent;if(u.includes('Win'))return'Windows';if(u.includes('Mac'))return'macOS';if(u.includes('Linux'))return'Linux';if(u.includes('Android'))return'Android';if(u.includes('iPhone')||u.includes('iPad'))return'iOS';return'Unknown'}
-function gU(){return JSON.parse(localStorage.getItem('brc_users')||'[]')}
-function sU(u){localStorage.setItem('brc_users',JSON.stringify(u));if(brcChannel)brcChannel.postMessage({type:'users_updated',data:u})}
-function gM(){return JSON.parse(localStorage.getItem('brc_modules')||'[]')}
-function sM(m){localStorage.setItem('brc_modules',JSON.stringify(m));if(brcChannel)brcChannel.postMessage({type:'modules_updated',data:m})}
+// ===== DATA LAYER (Firebase or localStorage) =====
+function gU(){
+  if(useFirebase){
+    // Sync from Firebase - cached locally
+    return JSON.parse(localStorage.getItem('fb_users')||'[]');
+  }
+  return JSON.parse(localStorage.getItem('brc_users')||'[]');
+}
+function sU(u){
+  if(useFirebase){
+    db.ref('users').set(u);
+  }
+  localStorage.setItem('brc_users',JSON.stringify(u));
+}
+function gM(){
+  if(useFirebase){
+    return JSON.parse(localStorage.getItem('fb_modules')||'[]');
+  }
+  return JSON.parse(localStorage.getItem('brc_modules')||'[]');
+}
+function sM(m){
+  if(useFirebase){
+    db.ref('modules').set(m);
+  }
+  localStorage.setItem('brc_modules',JSON.stringify(m));
+}
 
-function initD(){if(!localStorage.getItem('brc_modules'))localStorage.setItem('brc_modules','[]');if(!localStorage.getItem('brc_users'))localStorage.setItem('brc_users','[]')}
+// Firebase Realtime Listeners
+if(useFirebase){
+  db.ref('users').on('value',function(snap){
+    const data=snap.val()||[];
+    localStorage.setItem('fb_users',JSON.stringify(data));
+    if(currentMode==='owner')updAll();
+    else if(currentMode==='client'&&currentClient){
+      const u=data.find(function(x){return x.code===currentClient.code});
+      if(u){
+        if(u.status==='disabled'){document.getElementById('blkS').classList.add('ac');return}
+        if(u.plan!=='permanent'&&u.endDate&&new Date()>new Date(u.endDate)){document.getElementById('blkS').classList.add('ac');return}
+        entD(u);
+      }
+    }
+  });
+  db.ref('modules').on('value',function(snap){
+    const data=snap.val()||[];
+    localStorage.setItem('fb_modules',JSON.stringify(data));
+    if(currentMode==='client')rMod();
+  });
+}
+
+function initD(){
+  if(!useFirebase){
+    if(!localStorage.getItem('brc_modules'))localStorage.setItem('brc_modules','[]');
+    if(!localStorage.getItem('brc_users'))localStorage.setItem('brc_users','[]');
+  }
+}
 
 window.addEventListener('load',function(){
   initD();
@@ -486,7 +553,7 @@ window.addEventListener('load',function(){
   setTimeout(function(){document.querySelectorAll('.tb2').forEach(function(b){b.classList.remove('ac');const t=b.getAttribute('onclick');if(t&&t.indexOf("'"+st+"'")!==-1)b.classList.add('ac')})},100);
   setTimeout(function(){
     document.getElementById('ld').classList.add('h');
-    // Auto-check session
+    if(useFirebase){document.getElementById('syncInd').style.display='flex';document.getElementById('syncText').textContent='Cloud Connected'}
     const cs=localStorage.getItem('brc_client_session');
     const os=localStorage.getItem('brc_owner_session');
     if(os==='active'){showOwnerDash()}
@@ -495,21 +562,14 @@ window.addEventListener('load',function(){
   },1200);
 });
 
-// ===== REALTIME SYNC =====
-if(brcChannel){brcChannel.onmessage=function(e){const msg=e.data;if(msg.type==='users_updated'){lastUC=msg.data.length;if(currentMode==='owner')updAll();else if(currentMode==='client'){const s=localStorage.getItem('brc_client_session');if(s){const u=gU().find(function(x){return x.code===s});if(u){if(u.status==='disabled'){document.getElementById('blkS').classList.add('ac');return}if(u.plan!=='permanent'&&u.endDate&&new Date()>new Date(u.endDate)){document.getElementById('blkS').classList.add('ac');return}entD(u)}}}}if(msg.type==='modules_updated'){lastMC=msg.data.length;if(currentMode==='client')rMod()}}}
-window.addEventListener('storage',function(e){if(e.key==='brc_users'||e.key==='brc_modules'){if(currentMode==='owner')updAll();else if(currentMode==='client'){const s=localStorage.getItem('brc_client_session');if(s){const u=gU().find(function(x){return x.code===s});if(u)entD(u)}}}});
-
-// Auto polling
-setInterval(function(){if(currentMode==='owner'){const u=gU(),m=gM();if(u.length!==lastUC||m.length!==lastMC){updAll()}}},3000);
-
 function showLanding(){hideAll();document.getElementById('landingPage').style.display='flex';currentMode=null}
 function showAuth(mode){hideAll();document.getElementById('authPage').style.display='flex';if(mode==='client'){document.getElementById('clientAuth').classList.add('ac');document.getElementById('ownerAuth').classList.remove('ac');document.getElementById('authTitle').textContent='Client Portal';document.getElementById('authSub').textContent='Masuk atau Daftar Toko';swTab('login')}else{document.getElementById('ownerAuth').classList.add('ac');document.getElementById('clientAuth').classList.remove('ac');document.getElementById('authTitle').textContent='Owner Dashboard';document.getElementById('authSub').textContent='Secure Access — PIN Admin';setTimeout(function(){document.getElementById('owPin').focus()},300)}}
 function hideAll(){document.getElementById('landingPage').style.display='none';document.getElementById('authPage').style.display='none';document.getElementById('clientDash').style.display='none';document.getElementById('ownerDash').style.display='none'}
 function backToLanding(){localStorage.removeItem('brc_client_session');localStorage.removeItem('brc_owner_session');currentClient=null;currentMode=null;document.getElementById('blkS').classList.remove('ac');document.getElementById('devS').classList.remove('ac');hideAll();showLanding()}
 
-function swTab(t){const lf=document.getElementById('loginForm'),rf=document.getElementById('regForm'),tl=document.getElementById('tabLogin'),tr=document.getElementById('tabReg');if(t==='login'){lf.style.display='block';rf.style.display='none';tl.style.background='var(--bg2)';tl.style.color='var(--tx)';tl.style.boxShadow='0 2px 8px rgba(0,0,0,.08)';tr.style.background='transparent';tr.style.color='var(--mt)';tr.style.boxShadow='none'}else{lf.style.display='none';rf.style.display='block';tr.style.background='var(--bg2)';tr.style.color='var(--tx)';tr.style.boxShadow='0 2px 8px rgba(0,0,0,.08)';tl.style.background='transparent';tl.style.color='var(--mt)';tl.style.boxShadow='none'}}
+function swTab(t){const lf=document.getElementById('loginForm'),rf=document.getElementById('regForm'),tl=document.getElementById('tabLogin'),tr=document.getElementById('tabReg');if(t==='login'){lf.style.display='block';rf.style.display='none';tl.classList.add('ac');tr.classList.remove('ac')}else{lf.style.display='none';rf.style.display='block';tr.classList.add('ac');tl.classList.remove('ac')}}
 
-// ===== CLIENT FUNCTIONS =====
+// CLIENT
 function doLg(){const c=document.getElementById('lgC').value.trim().toUpperCase(),p=document.getElementById('lgP').value.trim();if(!c||!p){showErr('lgErr','Masukkan kode toko dan PIN!');return}const u=gU().find(function(x){return x.code.toUpperCase()===c});if(!u){showErr('lgErr','Kode toko tidak ditemukan!');return}if(u.pin!==p){showErr('lgErr','PIN salah!');return}if(u.status==='disabled'){showErr('lgErr','Akun dinonaktifkan. Hubungi admin.');return}if(u.status==='pending'){showErr('lgErr','Akun belum disetujui admin. Tunggu ACC dari Owner.');return}if(u.plan!=='permanent'&&u.endDate&&new Date()>new Date(u.endDate)){document.getElementById('blkS').classList.add('ac');return}if(u.device&&u.device!==navigator.userAgent.substring(0,80)&&u.locationConfirmed){document.getElementById('devS').classList.add('ac');return}localStorage.setItem('brc_client_session',u.code);currentClient=u;currentMode='client';showClientDash(u)}
 
 function doRg(){const c=document.getElementById('rgC').value.trim().toUpperCase(),n=document.getElementById('rgN').value.trim(),w=document.getElementById('rgW').value.trim(),p=document.getElementById('rgP').value,pi=document.getElementById('rgPi').value.trim();if(!c||!n||!w||!pi){showErr('rgErr','Lengkapi semua field!');return}if(pi.length<4){showErr('rgErr','PIN minimal 4 digit!');return}const us=gU();if(us.find(function(x){return x.code.toUpperCase()===c})){showErr('rgErr','Kode toko sudah terdaftar!');return}const nu={code:c,name:n,whatsapp:w,pin:pi,plan:p,status:'pending',startDate:new Date().toISOString().split('T')[0],endDate:null,device:navigator.userAgent.substring(0,80),deviceType:gDT(),browser:gBR(),os:gOS(),screen:window.screen.width+'x'+window.screen.height,location:null,locationConfirmed:false,registeredAt:new Date().toISOString().split('T')[0]};
@@ -519,11 +579,11 @@ function resetReg(){document.getElementById('rgC').value='';document.getElementB
 
 function showClientDash(u){hideAll();document.getElementById('clientDash').style.display='block';currentMode='client';entD(u)}
 function entD(u){currentClient=u;document.getElementById('cSN').textContent=u.name.toUpperCase();document.getElementById('cSC').textContent=u.code;document.getElementById('cNm').textContent=u.name;document.getElementById('cCd').textContent=u.code;document.getElementById('cAv').textContent=u.name.charAt(0).toUpperCase();updS(u);rMod();chkE(u)}
-function updS(u){const ic=document.getElementById('subI'),tx=document.getElementById('subTx'),st=document.getElementById('subSt');if(u.plan==='permanent'){ic.textContent='♾️';tx.innerHTML='AKSES PERMANEN AKTIF<span>Tanpa Batas Waktu Kadaluarsa</span>';st.className='subst ac';st.textContent='● Aktif'}else{const d=gRD(u);ic.textContent='';tx.innerHTML='LANGGANAN '+u.plan+' BULAN<span>Berlaku hingga '+(u.endDate||'-')+'</span>';if(d<=30&&d>0){st.className='subst ex';st.textContent='⚠ '+d+' Hari Lagi'}else if(d>0){st.className='subst ac';st.textContent='● '+d+' Hari Lagi'}else{st.className='subst';st.style.background='rgba(239,68,68,.1)';st.style.color='var(--er)';st.textContent='● Habis'}}}
+function updS(u){const ic=document.getElementById('subI'),tx=document.getElementById('subTx'),st=document.getElementById('subSt');if(u.plan==='permanent'){ic.textContent='♾️';tx.innerHTML='AKSES PERMANEN AKTIF<span>Tanpa Batas Waktu Kadaluarsa</span>';st.className='subst ac';st.textContent='● Aktif'}else{const d=gRD(u);ic.textContent='📅';tx.innerHTML='LANGGANAN '+u.plan+' BULAN<span>Berlaku hingga '+(u.endDate||'-')+'</span>';if(d<=30&&d>0){st.className='subst ex';st.textContent='⚠ '+d+' Hari Lagi'}else if(d>0){st.className='subst ac';st.textContent='● '+d+' Hari Lagi'}else{st.className='subst';st.style.background='rgba(239,68,68,.1)';st.style.color='var(--er)';st.textContent='● Habis'}}}
 function gRD(u){if(u.plan==='permanent'||!u.endDate)return 9999;return Math.ceil((new Date(u.endDate)-new Date())/(1000*60*60*24))}
 function chkE(u){const w=document.getElementById('expW');if(u.plan!=='permanent'){const d=gRD(u);if(d<=30&&d>0){w.style.display='flex';document.getElementById('expTx').textContent='⚠️ Langganan tersisa '+d+' hari! Segera perpanjang.'}else if(d<=0){document.getElementById('blkS').classList.add('ac')}else w.style.display='none'}else w.style.display='none'}
 
-function rMod(){const ms=gM(),g=document.getElementById('modG');document.getElementById('modC').textContent=ms.length;if(ms.length===0){g.innerHTML='<div class="es" style="grid-column:1/-1"><div class="esi"></div><h3>Belum Ada Modul</h3><p>Owner belum menambahkan modul. Modul akan muncul di sini secara realtime setelah ditambahkan.</p></div>';return}let html='';ms.forEach(function(m){html+='<div class="mc"><div class="mch"><div class="mib">'+(m.icon||'📦')+'</div><div class="mst"><div class="sd"></div>Online</div></div><h3 class="mnm">'+m.name+'</h3><p class="mds">'+(m.desc||'Modul operasional retail')+'</p>';if(m.credentials){html+='<div class="mcr"><div class="mct"> Kredensial Modul <span style="margin-left:auto;font-size:8px">Terkunci</span></div><div class="crg"><div class="cri"><div class="crl">User ID:</div><div class="crv">'+m.credentials.userId+' <button class="cpb" onclick="cpT(\''+m.credentials.userId+'\')">📋</button></div></div><div class="cri"><div class="crl">PIN:</div><div class="crv">'+m.credentials.pin+' <button class="cpb" onclick="cpT(\''+m.credentials.pin+'\')">📋</button></div></div></div></div>'}html+='<button class="mbt" onclick="opM(\''+m.id+'\',\''+m.name+'\',\''+m.url+'\')">⚡ Buka Ruang Kerja Modul</button></div>'});g.innerHTML=html}
+function rMod(){const ms=gM(),g=document.getElementById('modG');document.getElementById('modC').textContent=ms.length;if(ms.length===0){g.innerHTML='<div class="es" style="grid-column:1/-1"><div class="esi"></div><h3>Belum Ada Modul</h3><p>Owner belum menambahkan modul. Modul akan muncul di sini secara realtime.</p></div>';return}let html='';ms.forEach(function(m){html+='<div class="mc"><div class="mch"><div class="mib">'+(m.icon||'')+'</div><div class="mst"><div class="sd"></div>Online</div></div><h3 class="mnm">'+m.name+'</h3><p class="mds">'+(m.desc||'Modul operasional retail')+'</p>';if(m.credentials){html+='<div class="mcr"><div class="mct">🔐 Kredensial Modul <span style="margin-left:auto;font-size:8px">Terkunci</span></div><div class="crg"><div class="cri"><div class="crl">User ID:</div><div class="crv">'+m.credentials.userId+' <button class="cpb" onclick="cpT(\''+m.credentials.userId+'\')">📋</button></div></div><div class="cri"><div class="crl">PIN:</div><div class="crv">'+m.credentials.pin+' <button class="cpb" onclick="cpT(\''+m.credentials.pin+'\')">📋</button></div></div></div></div>'}html+='<button class="mbt" onclick="opM(\''+m.id+'\',\''+m.name+'\',\''+m.url+'\')">⚡ Buka Ruang Kerja Modul</button></div>'});g.innerHTML=html}
 function opM(id,nm,ur){document.getElementById('mvNm').textContent='⚡ '+nm;document.getElementById('mvFr').src=ur;document.getElementById('modV').classList.add('ac')}
 function clMod(){document.getElementById('modV').classList.remove('ac');document.getElementById('mvFr').src=''}
 function cpT(t){navigator.clipboard.writeText(t).then(function(){toast('Disalin!','ok')})}
@@ -534,47 +594,58 @@ function clDet(){document.getElementById('detM').classList.remove('ac')}
 let sCC=0,sCT=null;
 function hSt(){sCC++;clearTimeout(sCT);if(sCC>=2){sCC=0;currentMode='owner';showAuth('owner')}else sCT=setTimeout(function(){sCC=0},1000)}
 
-// ===== OWNER FUNCTIONS =====
+// OWNER
 function doOwLogin(){const pin=document.getElementById('owPin').value.trim();if(!pin){document.getElementById('owErr').textContent='Masukkan PIN!';document.getElementById('owErr').style.display='block';return}if(pin===OWNER_PIN){localStorage.setItem('brc_owner_session','active');currentMode='owner';showOwnerDash();toast('Welcome, Owner!','ok')}else{document.getElementById('owErr').textContent='PIN salah!';document.getElementById('owErr').style.display='block';document.getElementById('owPin').value='';document.getElementById('owPin').focus();setTimeout(function(){document.getElementById('owErr').style.display='none'},2000)}}
 
-function showOwnerDash(){hideAll();document.getElementById('ownerDash').style.display='flex';currentMode='owner';updAll();startPolling()}
+function showOwnerDash(){hideAll();document.getElementById('ownerDash').style.display='flex';currentMode='owner';updAll()}
 
 function doLogout(){if(!confirm('Yakin ingin logout?'))return;localStorage.removeItem('brc_owner_session');currentMode=null;document.getElementById('sb').classList.remove('open');document.getElementById('mhTog').classList.remove('active');backToLanding();toast('Logged out','in')}
 
-function tgSb(){const sb=document.getElementById('sb'),btn=document.getElementById('mhTog');sb.classList.toggle('open');btn.classList.toggle('active');if(sb.classList.contains('open')){btn.innerHTML='✕';btn.title='Tutup Sidebar'}else{btn.innerHTML='☰';btn.title='Buka Sidebar'}}
+// SIDEBAR TOGGLE DENGAN TOMBOL X
+function tgSb(){
+  const sb=document.getElementById('sb');
+  const btn=document.getElementById('mhTog');
+  sb.classList.toggle('open');
+  btn.classList.toggle('active');
+  if(sb.classList.contains('open')){
+    btn.innerHTML='✕';
+    btn.title='Tutup Sidebar';
+  }else{
+    btn.innerHTML='☰';
+    btn.title='Buka Sidebar';
+  }
+}
 
-function manualRefresh(){const btn=document.getElementById('mhRefresh');btn.classList.add('spinning');updAll();toast('Data di-refresh!','in');setTimeout(function(){btn.classList.remove('spinning')},1000)}
-
-function startPolling(){setInterval(function(){if(currentMode==='owner'){const u=gU(),m=gM();if(u.length!==lastUC||m.length!==lastMC){updAll();const pending=u.filter(function(x){return x.status==='pending'});if(pending.length>0){const np=pending.filter(function(x){return !window._sp||!window._sp.includes(x.code)});if(np.length>0){toast('🔔 Ada '+np.length+' pendaftaran baru!','in');window._sp=pending.map(function(x){return x.code})}}}}},3000)}
+function manualRefresh(){const btn=document.getElementById('mhRefresh');btn.classList.add('spinning');updAll();toast('Data di-refresh dari server!','in');setTimeout(function(){btn.classList.remove('spinning')},1000)}
 
 function swS(s,el){document.querySelectorAll('.os').forEach(function(x){x.classList.remove('ac')});document.getElementById('s-'+s).classList.add('ac');document.querySelectorAll('.nv-i').forEach(function(x){x.classList.remove('ac')});if(el)el.classList.add('ac');const tt={overview:'Owner <span>Dashboard</span>',active:'User <span>Aktif</span>',expiring:'User <span>Mau Habis</span>',pending:'ACC <span>Pendaftaran</span>',devices:'Data <span>Pengguna</span>',settings:'<span>Pengaturan</span> Modul'};document.getElementById('mhT').innerHTML=tt[s]||'Owner <span>Dashboard</span>';if(s==='active')rAT();if(s==='expiring')rET();if(s==='pending')rPT();if(s==='devices')rDT();if(s==='settings')rML();if(s==='overview'){updSt();rOT()}if(window.innerWidth<=768){document.getElementById('sb').classList.remove('open');document.getElementById('mhTog').classList.remove('active');document.getElementById('mhTog').innerHTML='☰'}}
 
-function updAll(){updSt();rOT();rAT();rET();rPT();rDT();rML();updBd();lastUC=gU().length;lastMC=gM().length}
+function updAll(){updSt();rOT();rAT();rET();rPT();rDT();rML();updBd()}
 function updSt(){const u=gU();document.getElementById('stT').textContent=u.length;document.getElementById('stA').textContent=u.filter(function(x){return x.status==='active'}).length;document.getElementById('stE').textContent=u.filter(function(x){return x.status==='active'&&x.plan!=='permanent'&&gRD(x)<=30&&gRD(x)>0}).length;document.getElementById('stP').textContent=u.filter(function(x){return x.status==='pending'}).length}
 function updBd(){const u=gU();document.getElementById('exBd').textContent=u.filter(function(x){return x.status==='active'&&x.plan!=='permanent'&&gRD(x)<=30&&gRD(x)>0}).length;document.getElementById('peBd').textContent=u.filter(function(x){return x.status==='pending'}).length}
 function gUS(u){if(u.status==='pending')return'pending';if(u.plan==='permanent')return'active';if(!u.endDate)return'active';const d=gRD(u);if(d<=0)return'expired';if(d<=30)return'expiring';return'active'}
 
-function delUser(c){if(!confirm('⚠️ HAPUS PERMANEN user "'+c+'"?\n\nData akan dihapus dari database.'))return;const u=gU(),idx=u.findIndex(function(x){return x.code===c});if(idx!==-1){u.splice(idx,1);sU(u);toast('User '+c+' dihapus!','er');updAll()}}
+function delUser(c){if(!confirm('⚠️ HAPUS PERMANEN user "'+c+'"?\n\nData akan dihapus dari server.'))return;const u=gU(),idx=u.findIndex(function(x){return x.code===c});if(idx!==-1){u.splice(idx,1);sU(u);toast('User '+c+' dihapus dari server!','er');updAll()}}
 
 function rOT(){const u=gU(),sr=document.getElementById('oSrch').value.toLowerCase(),fl=document.getElementById('oFlt').value;const f=u.filter(function(x){const ms=x.code.toLowerCase().includes(sr)||x.name.toLowerCase().includes(sr);const mf=fl==='all'||gUS(x)===fl;return ms&&mf});document.getElementById('oTb').innerHTML=f.length?f.map(function(x){const st=gUS(x),dy=x.plan==='permanent'?'∞':gRD(x)+' Hari',ed=x.plan==='permanent'?'Permanent':(x.endDate||'-');return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td style="font-family:JetBrains Mono;font-size:11px">'+x.pin+'</td><td>'+ed+'</td><td style="font-weight:700">'+dy+'</td><td><span class="sp2 '+st+'">'+st.charAt(0).toUpperCase()+st.slice(1)+'</span></td><td><div class="ab">'+(st!=='expired'?'<button class="ab2 ext" onclick="extU(\''+x.code+'\')">📅 Extend</button>':'')+'<button class="ab2 del" onclick="delUser(\''+x.code+'\')">️ Off</button><button class="ab2 det" onclick="shDet2(\''+x.code+'\')">👁️</button></div></td></tr>'}).join(''):'<tr><td colspan="7"><div class="es"><div class="esi">📭</div><h3>Belum ada user terdaftar</h3><p>Client yang daftar akan muncul di sini.</p></div></td></tr>'}
 function fltTbl(){rOT()}
 
-function rAT(){const u=gU().filter(function(x){return x.status==='active'});document.getElementById('aTb').innerHTML=u.length?u.map(function(x){const d=x.plan==='permanent'?'∞':gRD(x)+' Hari';return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td>'+x.whatsapp+'</td><td>'+(x.plan==='permanent'?'Permanent':x.endDate)+'</td><td style="font-weight:700">'+d+'</td><td style="font-size:10px;color:var(--mt)">'+(x.deviceType||'-')+'</td><td><div class="ab"><button class="ab2 ext" onclick="extU(\''+x.code+'\')">📅 Extend</button><button class="ab2 del" onclick="delUser(\''+x.code+'\')">🗑️ Off</button></div></td></tr>'}).join(''):'<tr><td colspan="7"><div class="es"><div class="esi">👥</div><h3>Tidak ada user aktif</h3></div></td></tr>'}
+function rAT(){const u=gU().filter(function(x){return x.status==='active'});document.getElementById('aTb').innerHTML=u.length?u.map(function(x){const d=x.plan==='permanent'?'':gRD(x)+' Hari';return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td>'+x.whatsapp+'</td><td>'+(x.plan==='permanent'?'Permanent':x.endDate)+'</td><td style="font-weight:700">'+d+'</td><td style="font-size:10px;color:var(--mt)">'+(x.deviceType||'-')+'</td><td><div class="ab"><button class="ab2 ext" onclick="extU(\''+x.code+'\')">📅 Extend</button><button class="ab2 del" onclick="delUser(\''+x.code+'\')">🗑️ Off</button></div></td></tr>'}).join(''):'<tr><td colspan="7"><div class="es"><div class="esi"></div><h3>Tidak ada user aktif</h3></div></td></tr>'}
 function rET(){const u=gU().filter(function(x){return x.status==='active'&&x.plan!=='permanent'&&gRD(x)<=30&&gRD(x)>0});document.getElementById('eTb').innerHTML=u.length?u.map(function(x){const d=gRD(x);return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td>'+x.whatsapp+'</td><td>'+x.endDate+'</td><td style="font-weight:700;color:var(--wn)">'+d+' Hari</td><td><div class="ab"><button class="ab2 ext" onclick="extU(\''+x.code+'\')">📅 Perpanjang</button><button class="ab2 del" onclick="delUser(\''+x.code+'\')">🗑️ Off</button></div></td></tr>'}).join(''):'<tr><td colspan="6"><div class="es"><div class="esi">⏳</div><h3>Tidak ada user mau habis</h3></div></td></tr>'}
 function rPT(){const u=gU().filter(function(x){return x.status==='pending'});document.getElementById('pTb').innerHTML=u.length?u.map(function(x){const pl=x.plan==='permanent'?'Permanent':x.plan+' Bulan';return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td>'+x.whatsapp+'</td><td><span class="sp2 pe">'+pl+'</span></td><td>'+x.registeredAt+'</td><td><div class="ab"><button class="ab2 app" onclick="appU(\''+x.code+'\')">✓ ACC</button><button class="ab2 rej" onclick="rejU(\''+x.code+'\')">✕ Tolak</button></div></td></tr>'}).join(''):'<tr><td colspan="6"><div class="es"><div class="esi">📋</div><h3>Tidak ada pendaftaran pending</h3></div></td></tr>'}
 function rDT(){const u=gU().filter(function(x){return x.status!=='pending'});document.getElementById('dTb').innerHTML=u.length?u.map(function(x){const lc=x.location?x.location.lat.toFixed(4)+', '+x.location.lng.toFixed(4):'Belum';return '<tr><td><strong style="font-family:JetBrains Mono">'+x.code+'</strong></td><td>'+x.name+'</td><td><span class="sp2 '+(x.locationConfirmed?'ac':'ed')+'">'+(x.locationConfirmed?'✅ '+lc:'❌ Belum')+'</span></td><td style="font-size:10px;color:var(--mt)">'+(x.deviceType||'-')+'</td><td style="font-size:10px;color:var(--mt)">'+(x.browser||'-')+'</td><td><div class="ab"><button class="ab2 det" onclick="shDet2(\''+x.code+'\')">👁️ Detail</button><button class="ab2 del" onclick="delUser(\''+x.code+'\')">🗑️ Off</button></div></td></tr>'}).join(''):'<tr><td colspan="6"><div class="es"><div class="esi">📱</div><h3>Belum ada data pengguna</h3></div></td></tr>'}
 
-function shDet2(c){const u=gU().find(function(x){return x.code===c});if(!u)return;const d=u.plan==='permanent'?'∞':gRD(u)+' Hari';let h='<div style="text-align:center;margin-bottom:12px"><div style="width:48px;height:48px;border-radius:12px;background:var(--gr);display:inline-flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:6px"></div><h3 style="font-size:16px;font-weight:800">'+u.name+'</h3><p style="font-size:9px;color:var(--mt);font-family:JetBrains Mono">KODE: '+u.code+'</p></div>';h+='<div class="dtr"><span class="dtl">WhatsApp</span><span class="dtv">'+u.whatsapp+'</span></div>';h+='<div class="dtr"><span class="dtl">PIN</span><span class="dtv">'+u.pin+'</span></div>';h+='<div class="dtr"><span class="dtl">Paket</span><span class="dtv">'+(u.plan==='permanent'?'Permanent':u.plan+' Bulan')+'</span></div>';h+='<div class="dtr"><span class="dtl">Status</span><span class="dtv">'+u.status+'</span></div>';h+='<div class="dtr"><span class="dtl">Sisa Waktu</span><span class="dtv">'+d+'</span></div>';h+='<div class="dtr"><span class="dtl">Mulai</span><span class="dtv">'+u.startDate+'</span></div>';h+='<div class="dtr"><span class="dtl">Berakhir</span><span class="dtv">'+(u.endDate||'Permanent')+'</span></div>';h+='<div class="dtr"><span class="dtl">Device</span><span class="dtv">'+(u.deviceType||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">Browser</span><span class="dtv">'+(u.browser||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">OS</span><span class="dtv">'+(u.os||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">Layar</span><span class="dtv">'+(u.screen||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">Lokasi</span><span class="dtv">'+(u.location?u.location.address:'Belum')+'</span></div>';h+='<div class="dtr"><span class="dtl">Terdaftar</span><span class="dtv">'+u.registeredAt+'</span></div>';h+='<div style="display:flex;gap:6px;margin-top:12px"><button class="btn bp bs" onclick="extU(\''+u.code+'\');clDet()" style="flex:1">📅 Extend</button><button class="btn bd bs" onclick="delUser(\''+u.code+'\');clDet()" style="flex:1">🗑️ Hapus</button></div>';h+='<button class="btn bo" onclick="clDet()" style="width:100%;margin-top:6px">Tutup</button>';document.getElementById('detC').innerHTML=h;document.getElementById('detM').classList.add('ac')}
+function shDet2(c){const u=gU().find(function(x){return x.code===c});if(!u)return;const d=u.plan==='permanent'?'∞':gRD(u)+' Hari';let h='<div style="text-align:center;margin-bottom:12px"><div style="width:48px;height:48px;border-radius:12px;background:var(--gr);display:inline-flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:6px"></div><h3 style="font-size:16px;font-weight:800">'+u.name+'</h3><p style="font-size:9px;color:var(--mt);font-family:JetBrains Mono">KODE: '+u.code+'</p></div>';h+='<div class="dtr"><span class="dtl">WhatsApp</span><span class="dtv">'+u.whatsapp+'</span></div>';h+='<div class="dtr"><span class="dtl">PIN</span><span class="dtv">'+u.pin+'</span></div>';h+='<div class="dtr"><span class="dtl">Paket</span><span class="dtv">'+(u.plan==='permanent'?'Permanent':u.plan+' Bulan')+'</span></div>';h+='<div class="dtr"><span class="dtl">Status</span><span class="dtv">'+u.status+'</span></div>';h+='<div class="dtr"><span class="dtl">Sisa Waktu</span><span class="dtv">'+d+'</span></div>';h+='<div class="dtr"><span class="dtl">Mulai</span><span class="dtv">'+u.startDate+'</span></div>';h+='<div class="dtr"><span class="dtl">Berakhir</span><span class="dtv">'+(u.endDate||'Permanent')+'</span></div>';h+='<div class="dtr"><span class="dtl">Device</span><span class="dtv">'+(u.deviceType||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">Browser</span><span class="dtv">'+(u.browser||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">OS</span><span class="dtv">'+(u.os||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">Layar</span><span class="dtv">'+(u.screen||'-')+'</span></div>';h+='<div class="dtr"><span class="dtl">Lokasi</span><span class="dtv">'+(u.location?u.location.address:'Belum')+'</span></div>';h+='<div class="dtr"><span class="dtl">Terdaftar</span><span class="dtv">'+u.registeredAt+'</span></div>';h+='<div style="display:flex;gap:6px;margin-top:12px"><button class="btn bp bs" onclick="extU(\''+u.code+'\');clDet()" style="flex:1">📅 Extend</button><button class="btn bd bs" onclick="delUser(\''+u.code+'\');clDet()" style="flex:1">️ Hapus</button></div>';h+='<button class="btn bo" onclick="clDet()" style="width:100%;margin-top:6px">Tutup</button>';document.getElementById('detC').innerHTML=h;document.getElementById('detM').classList.add('ac')}
 
 let paC=null;
 function appU(c){const u=gU().find(function(x){return x.code===c});if(!u)return;paC=c;const pl=u.plan==='permanent'?'Permanent':u.plan+' Bulan';document.getElementById('cfmTx').textContent='User "'+u.name+'" ('+c+') akan diaktifkan:';document.getElementById('cfmPl').textContent=pl;document.getElementById('cfmM').classList.add('ac')}
-function cfApp(){if(!paC)return;const u=gU(),idx=u.findIndex(function(x){return x.code===paC});if(idx===-1)return;u[idx].status='active';u[idx].startDate=new Date().toISOString().split('T')[0];if(u[idx].plan==='permanent')u[idx].endDate=null;else{const e=new Date();e.setMonth(e.getMonth()+parseInt(u[idx].plan));u[idx].endDate=e.toISOString().split('T')[0]}sU(u);clCfm();toast('User '+paC+' diaktifkan!','ok');updAll();paC=null}
+function cfApp(){if(!paC)return;const u=gU(),idx=u.findIndex(function(x){return x.code===paC});if(idx===-1)return;u[idx].status='active';u[idx].startDate=new Date().toISOString().split('T')[0];if(u[idx].plan==='permanent')u[idx].endDate=null;else{const e=new Date();e.setMonth(e.getMonth()+parseInt(u[idx].plan));u[idx].endDate=e.toISOString().split('T')[0]}sU(u);clCfm();toast('User '+paC+' diaktifkan di server!','ok');updAll();paC=null}
 function clCfm(){document.getElementById('cfmM').classList.remove('ac')}
 function rejU(c){if(!confirm('Tolak & HAPUS pendaftaran '+c+'?'))return;const u=gU(),idx=u.findIndex(function(x){return x.code===c});if(idx!==-1){u.splice(idx,1);sU(u);toast('Pendaftaran '+c+' ditolak & dihapus.','in');updAll()}}
-function extU(c){const u=gU().find(function(x){return x.code===c});if(!u)return;const pl=prompt('Perpanjang langganan '+u.name+' ('+c+')\nKetik: 1, 3, 6, atau permanent',u.plan);if(!pl)return;const us=gU(),idx=us.findIndex(function(x){return x.code===c});us[idx].plan=pl;us[idx].status='active';us[idx].startDate=new Date().toISOString().split('T')[0];if(pl==='permanent')us[idx].endDate=null;else{const e=new Date();e.setMonth(e.getMonth()+parseInt(pl));us[idx].endDate=e.toISOString().split('T')[0]}sU(us);toast('Langganan '+c+' diperpanjang!','ok');updAll()}
+function extU(c){const u=gU().find(function(x){return x.code===c});if(!u)return;const pl=prompt('Perpanjang langganan '+u.name+' ('+c+')\nKetik: 1, 3, 6, atau permanent',u.plan);if(!pl)return;const us=gU(),idx=us.findIndex(function(x){return x.code===c});us[idx].plan=pl;us[idx].status='active';us[idx].startDate=new Date().toISOString().split('T')[0];if(pl==='permanent')us[idx].endDate=null;else{const e=new Date();e.setMonth(e.getMonth()+parseInt(pl));us[idx].endDate=e.toISOString().split('T')[0]}sU(us);toast('Langganan '+c+' diperpanjang di server!','ok');updAll()}
 
-function addMod(){const n=document.getElementById('nMN').value.trim(),u=document.getElementById('nMU').value.trim(),d=document.getElementById('nMD').value.trim(),i=document.getElementById('nMI').value.trim()||'📦';if(!n||!u){toast('Nama dan URL wajib diisi!','er');return}const ms=gM();ms.push({id:'mod_'+Date.now(),name:n.toUpperCase(),url:u,desc:d||'Modul operasional retail',icon:i});sM(ms);document.getElementById('nMN').value='';document.getElementById('nMU').value='';document.getElementById('nMD').value='';document.getElementById('nMI').value='';rML();toast('Modul "'+n+'" ditambahkan! Langsung muncul di semua client.','ok')}
-function rmMod(id){if(!confirm('Hapus modul ini dari semua client?'))return;sM(gM().filter(function(m){return m.id!==id}));rML();toast('Modul dihapus.','in')}
+function addMod(){const n=document.getElementById('nMN').value.trim(),u=document.getElementById('nMU').value.trim(),d=document.getElementById('nMD').value.trim(),i=document.getElementById('nMI').value.trim()||'📦';if(!n||!u){toast('Nama dan URL wajib diisi!','er');return}const ms=gM();ms.push({id:'mod_'+Date.now(),name:n.toUpperCase(),url:u,desc:d||'Modul operasional retail',icon:i});sM(ms);document.getElementById('nMN').value='';document.getElementById('nMU').value='';document.getElementById('nMD').value='';document.getElementById('nMI').value='';rML();toast('Modul "'+n+'" ditambahkan ke server! Langsung muncul di semua client.','ok')}
+function rmMod(id){if(!confirm('Hapus modul ini dari semua client?'))return;sM(gM().filter(function(m){return m.id!==id}));rML();toast('Modul dihapus dari server.','in')}
 function rML(){const ms=gM();document.getElementById('modL').innerHTML='<h4 style="margin-bottom:8px;font-size:12px;color:var(--tx2)">Modul Terdaftar ('+ms.length+'):</h4>'+(ms.length?ms.map(function(m){return '<div class="mli"><div class="mli-i"><h4>'+m.icon+' '+m.name+'</h4><p>'+m.url+'</p></div><div class="ab"><button class="ab2 del" onclick="rmMod(\''+m.id+'\')">🗑️ Hapus</button></div></div>'}).join(''):'<div class="es" style="padding:16px"><p>Belum ada modul.</p></div>')}
 
 function showErr(id,msg){const e=document.getElementById(id);e.textContent=msg;e.style.display='block';setTimeout(function(){e.style.display='none'},2500)}
